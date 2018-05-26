@@ -1,0 +1,40 @@
+.wrapper--large{
+  width: percentage(1520/1680);
+  max-width: 1520px;
+}
+
+.wrapper--places{
+  width: percentage(1540/1680);
+}
+
+
+.wrapper--smallest{
+  width:1040px;
+}
+
+.wrapper--small{
+  width: 1100px;
+}
+
+.wrapper--fiche{
+  width: 1300px;
+}
+
+.wrapper--centered{
+  margin:0px auto;
+}
+
+.wrapper--modal{
+  background: white;
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.wrapper--modal--small{
+  width: 500px;
+}
+
+.wrapper--modal--large{
+  width: 600px;
+}

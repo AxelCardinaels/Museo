@@ -1,0 +1,106 @@
+.place__item--large{
+  width: percentage(350/1520);
+
+
+  &+&{
+    margin-left: percentage(30/1520);
+  }
+}
+
+.place__item{
+  position: relative;
+  @include transition_css(all,0.3s,ease,0s);
+  vertical-align: top;
+  &:hover{
+    transform: scale(1.02);
+  }
+}
+
+.place__link{
+  position: absolute;
+  top:0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+}
+
+
+.place__item--small{
+  width: percentage(284/1540);
+  display: inline-block;
+  margin:make_em(40,16) percentage(10/1540) 0px;
+}
+
+.place__item--smallest{
+  width: percentage(230/500);
+  display: inline-block;
+  margin:make_em(20,16) 1.5% 0px;
+
+  .place__ratings{
+
+    font-size: make_em(14,16);
+    margin-top:make_em(5,14);
+  }
+}
+
+.place__illustration{
+  @include background_size("../img/home.jpg",no-repeat,center,center,cover);
+  padding-top:calc(230 / 350 * 100%);
+  border-radius: 5px;
+  box-shadow: 0px 2px 7px rgba(1,1,1,0.2);
+  margin-bottom: make_em(20,16);
+}
+
+
+.place__illustration--small{
+  margin-bottom: make_em(10,16);
+}
+
+.place__city{
+  color: black;
+  text-transform: uppercase;
+  font-family: 'Work Sans', sans-serif;
+  font-size: make_em(13,16);
+  letter-spacing: 1.3px;
+  font-weight: 600;
+  position: relative;
+}
+
+.city__marker{
+  margin-right: make_em(7,16);
+}
+
+.city__text{
+  position: relative;
+  top:-2px;
+}
+
+.star--smallest{
+  height: 14px;
+}
+
+.star--large{
+  height: 17px;
+}
+
+.star--larger{
+  height: 20px;
+}
+.star__img{
+  display: inline-block;
+  height: 100%;
+}
+
+.place__ratings{
+  margin-top:make_em(10,16);
+  color:$color-text;
+}
+
+.ratings__stars{
+  margin-right:make_em(10,16);
+}
+
+.search__places{
+  margin-top:make_em(40,16);
+}

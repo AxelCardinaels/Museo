@@ -1,0 +1,107 @@
+.user__boutons{
+  position: absolute;
+  bottom:25px;
+  right:30px;
+  width: 100%;
+  text-align: right;
+}
+
+.user__infos{
+  width: 600px;
+  position: relative;
+  top:-80px;
+}
+
+
+.user__description{
+  padding-bottom: make_em(25,16);
+  border-bottom: 1px solid $color-border;
+}
+
+
+
+.trophy__description{
+  font-size: make_em(14,16);
+  padding:make_em(5,14) make_em(10,14);
+  border-radius: 6px;
+  width: 400px;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  @include transition_css(all,0.15s,ease,0s);
+  bottom: 60px;
+  background: $color-primary;
+  color: white;
+
+  &:after{
+    width: 15px;
+    height: 15px;
+    left:15px;
+    bottom:-7px;
+    content: "";
+    position: absolute;
+    background: $color-primary;
+    display: block;
+    transform :rotate(45deg);
+  }
+}
+
+.trophy__item{
+  position: relative;
+  &:hover .trophy__description{
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.trophy__img{
+  height: 40px;
+}
+
+
+.user__favorites{
+  margin-top:make_em(15,16);
+  padding-top:make_em(35,16);
+  border-top: 1px solid $color-border;
+}
+
+.user__stats{
+  margin-top:make_em(100,16);
+}
+
+.user__title{
+  color:$color-primary;
+  margin-bottom: make_em(25,16);
+}
+
+
+.user__picture{
+  width: 140px;
+  height: 140px;
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0px 2px 10px rgba(1,1,1,0.55);
+  margin-bottom: make_em(35,16);
+  position: relative;
+}
+
+
+.user__img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  @include background_size("../img/place.jpg",no-repeat,center,center,cover);
+}
+
+
+.user__icon{
+  width: 40px;
+  position: absolute;
+  bottom:-15px;
+  right: 15px;
+  z-index: 3;
+}
+
+.user__comment{
+  margin-bottom: make_em(35,16);
+}

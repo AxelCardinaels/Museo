@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>Fill 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M35.2337337,41 C35.0319747,41 34.8136089,40.9360282 34.5845852,40.809645 L25.0996807,35.577744 C24.8166232,35.4217154 24.4155838,35.3322589 23.9999205,35.3322589 C23.5842573,35.3322589 23.1834657,35.4217154 22.9004082,35.577744 L13.4152559,40.809645 C13.1862321,40.9357682 12.9678664,41 12.7661074,41 C12.5157676,41 12.2956668,40.8975412 12.1462065,40.711607 C12.0126093,40.5451765 11.872072,40.2349395 11.959567,39.6997612 L13.7709367,28.6188658 C13.884705,27.9224579 13.5733913,26.9176333 13.0913013,26.4243227 L5.4177664,18.5766012 C4.93666781,18.0845908 4.97285555,17.6622732 5.0370516,17.4544951 C5.10149551,17.2464568 5.30895533,16.88265 5.97371907,16.7812314 L16.5784605,15.1645144 C17.2449593,15.0628358 18.059679,14.4418417 18.3576082,13.8083653 L23.1001844,3.72631341 C23.3976178,3.09413729 23.7914693,3 23.9999205,3 C24.2083718,3 24.6022232,3.09413729 24.8996567,3.72631341 L29.6422329,13.8083653 C29.940162,14.4418417 30.7551297,15.0628358 31.4213806,15.1645144 L42.026122,16.7812314 C42.6908857,16.88265 42.8983455,17.2464568 42.9627895,17.4544951 C43.0272334,17.6622732 43.0634211,18.0845908 42.5820747,18.5766012 L34.9085398,26.4243227 C34.4264497,26.9176333 34.1151361,27.9224579 34.2289044,28.6188658 L36.040274,39.6997612 C36.127769,40.2349395 35.9872317,40.5451765 35.8536345,40.711607 C35.7041742,40.8975412 35.4840735,41 35.2337337,41" id="path-1"></path>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Fiche" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Fill-1">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use stroke="#CE9600" stroke-width="2" fill="#FFBA00" fill-rule="evenodd" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>

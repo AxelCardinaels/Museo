@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="46px" viewBox="0 0 48 46" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 47</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M30.2337337,36.2192135 C30.0319747,36.2192135 29.8136089,36.1582397 29.5845852,36.0377791 L20.0996807,31.0510596 C19.8166232,30.9023429 19.4155838,30.8170787 18.9999205,30.8170787 C18.5842573,30.8170787 18.1834657,30.9023429 17.9004082,31.0510596 L8.41525586,36.0377791 C8.18623212,36.1579918 7.9678664,36.2192135 7.76610738,36.2192135 C7.51576757,36.2192135 7.29566683,36.1215562 7.14620652,35.9443354 C7.01260934,35.7857043 6.87207204,35.4900059 6.95956704,34.9799075 L8.77093669,24.4182939 C8.88470498,23.7545216 8.57339131,22.796786 8.09130128,22.3265933 L0.4177664,14.846638 C-0.0633321885,14.3776846 -0.0271444533,13.975158 0.0370515974,13.7771169 C0.101495509,13.578828 0.308955333,13.2320701 0.97371907,13.1354043 L11.5784605,11.5944512 C12.2449593,11.4975375 13.059679,10.9056449 13.3576082,10.301855 L18.1001844,0.69227633 C18.3976178,0.0897257542 18.7914693,0 18.9999205,0 C19.2083718,0 19.6022232,0.0897257542 19.8996567,0.69227633 L24.6422329,10.301855 C24.940162,10.9056449 25.7551297,11.4975375 26.4213806,11.5944512 L37.026122,13.1354043 C37.6908857,13.2320701 37.8983455,13.578828 37.9627895,13.7771169 C38.0272334,13.975158 38.0634211,14.3776846 37.5820747,14.846638 L29.9085398,22.3265933 C29.4264497,22.796786 29.1151361,23.7545216 29.2289044,24.4182939 L31.040274,34.9799075 C31.127769,35.4900059 30.9872317,35.7857043 30.8536345,35.9443354 C30.7041742,36.1215562 30.4840735,36.2192135 30.2337337,36.2192135" id="path-1"></path>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <polygon id="path-3" points="4.97379915e-14 6.33333333 3.96463068 -2.66453526e-14 14.9908381 -2.66453526e-14 19 6.33333333 9.5 16"></polygon>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.183084239 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <mask id="mask-5" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="19" height="16" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+    </defs>
+    <g id="Fiche" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-47" transform="translate(5.000000, 3.000000)">
+            <g id="Fill-1">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use stroke="#CE9600" stroke-width="2" fill="#FFBA00" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <g id="Group-46" transform="translate(27.401558, 31.106327) rotate(37.000000) translate(-27.401558, -31.106327) translate(17.901558, 23.106327)">
+                <g id="Rectangle-38">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use stroke="#B21F00" mask="url(#mask-5)" stroke-width="2" fill="#DA2700" fill-rule="evenodd" xlink:href="#path-3"></use>
+                </g>
+                <path d="M8.5,14.5 L5.5,0.5" id="Line" stroke="#B12000" stroke-width="0.8" stroke-linecap="square"></path>
+                <path d="M9.79903811,14.3121778 L14.2009619,0.687822174" id="Line" stroke="#B12000" stroke-width="0.8" stroke-linecap="square"></path>
+            </g>
+        </g>
+    </g>
+</svg>

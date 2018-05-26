@@ -1,0 +1,20 @@
+.people__item{
+  width: 350px;
+
+
+  &:nth-child(3n+2){
+    margin:0px 130px;
+  }
+
+
+  &:nth-child(4n){
+    clear: both;
+  }
+}
+
+.people__icon{
+  border-radius: 100%;
+  width: 110px;
+  margin-bottom:make_em(15,16);
+  box-shadow: 1px 1px 40px rgba(1,1,1,0.2);
+}

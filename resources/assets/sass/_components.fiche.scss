@@ -1,0 +1,247 @@
+.fiche__splash{
+  @include background_size("../img/place.jpg",no-repeat,center,center,cover);
+  padding-top:calc(650 / 1520 * 100%);
+  margin-top:make_em(60,16);
+  position: relative;
+}
+
+
+.splash__boutons{
+  position: absolute;
+  bottom:25px;
+  left:30px;
+  width: 100%;
+}
+
+.icon--heart{
+  width: 21Px;
+  position: relative;
+  top:2px;
+}
+
+.fiche__infos{
+  width: 600px;
+}
+
+.fiche__commentaires{
+  width: 625px;
+}
+
+
+.fiche__recap{
+  margin-top:make_em(50,16);
+}
+
+.fiche__perk{
+  color:$color-title;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+}
+
+.fiche__stars{
+  margin:make_em(5,16) 0px make_em(30,16);
+}
+
+.fiche__description, .comment__text, .user__description{
+  p+p{
+    margin-top:make_em(20,16);
+  }
+}
+.fiche__datas{
+  display: table;
+
+  &+&{
+    margin-top:make_em(10,16);
+  }
+}
+
+.datas__icon{
+  width:22px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: make_em(12,16);
+}
+.icon--localisation{
+  height: 22px;
+}
+
+.fiche__links{
+  margin-top:make_em(35,16);
+  padding-bottom: make_em(25,16);
+  border-bottom: 1px solid $color-border;
+}
+
+.fiche__stats, .user__stats{
+  width: 500px;
+}
+
+.stats__criteria{
+  margin-top:make_em(30,16);
+  border-bottom: 1px solid $color-border;
+}
+
+.criteria__item{
+  float: left;
+  width: 50%;
+  display: inline-block;
+  margin-bottom: make_em(25,16);
+
+}
+
+.fiche__perks{
+  margin-top:make_em(30,16);
+}
+
+.perk__item{
+  margin:0px make_em(5,16) make_em(8,16);
+}
+
+.perk__link{
+  display: block;
+}
+
+.fiche__commentaires{
+  margin-top:make_em(40,16);
+}
+
+.comment__item{
+  width: 100%;
+
+  &+&{
+    margin-top: make_em(50,16);
+  }
+}
+
+.comment__item--small{
+  &+&{
+    margin-top: make_em(10,16);
+  }
+}
+
+
+.comment__face{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  @include background_size("../img/place.jpg",no-repeat,center,center,cover);
+}
+
+.comment__face--small{
+  width: 30px;
+  height: 30px;
+}
+
+.comment__texts{
+  width: 550px;
+  font-size: make_em(15,16);
+}
+
+.comment__texts--small{
+  width: 500px;
+  font-size: 1em;
+
+  .comment__actions{
+    margin:make_em(15,15) 0px make_em(15,15);
+  }
+
+  .comment__action+.comment__action{
+      margin-left: make_em(20,15);
+  }
+}
+
+.comment__text, .comment__actions{
+  margin-top:make_em(20,15);
+}
+
+.comment__text{
+  margin-top:make_em(10,15);
+}
+
+.comment__actions{
+  margin:make_em(25,15) 0px make_em(25,15);
+}
+
+
+.comment__by{
+  margin-top:make_em(7,16);
+}
+
+.comment__action{
+  color: $color-title;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  height: 18px;
+  display: inline-block;
+  &+&{
+    margin-left: make_em(15,15);
+  }
+}
+
+.action__icon{
+  height: 18px;
+  width:20px;
+  position: relative;
+  top:3px;
+  margin-right: make_em(5,15);
+  display: inline-block;
+  @include transition_css(all,0.3s,ease,0s);
+}
+
+.icon--like{
+  @include background_size("../img/icon--like--grey.svg",no-repeat,center,center,contain);
+
+  &:hover{
+    background-image: url("../img/icon--like--blue.svg");
+  }
+}
+
+.icon--liked{
+  @include background_size("../img/icon--like--blue.svg",no-repeat,center,center,contain);
+
+  &:hover{
+    background-image: url("../img/icon--like--grey.svg");
+  }
+}
+
+.icon--dislike{
+  @include background_size("../img/icon--dislike--grey.svg",no-repeat,center,center,contain);
+
+  &:hover{
+    background-image: url("../img/icon--dislike--red.svg");
+  }
+}
+
+.icon--disliked{
+  @include background_size("../img/icon--dislike--red.svg",no-repeat,center,center,contain);
+
+  &:hover{
+    background-image: url("../img/icon--dislike--grey.svg");
+  }
+}
+
+.comment__show-answers{
+  color: black;
+}
+
+.answer__by{
+  color: $color-title;
+}
+
+.answer__by, .comment__show-answers{
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+}
+
+.answer__item{
+  width: 100%;
+  margin-top:make_em(15,16);
+}
+
+.answer__form{
+  width: 500px;
+}
+
+.place__category{
+  display: block;
+  margin-bottom: make_em(15,16);
+}

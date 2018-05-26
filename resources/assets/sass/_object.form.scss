@@ -1,0 +1,368 @@
+.header__search{
+  width: 100%;
+  position: relative;
+
+  &:before{
+    position: absolute;
+    top:make_em(15,16);
+    left: make_em(25,16);
+    content:"";
+    width:30px;
+    height: 31px;
+    @include background_size("../img/icon--search.svg",no-repeat,center,center,contain);
+  }
+}
+
+.header__input{
+  font-size: make_em(18,16);
+  width: 100%;
+  padding:make_em(20,18) make_em(25,18) make_em(20,18) make_em(75,18);
+  border-radius: 10px;
+  color: $color-text;
+}
+
+
+.header__submit{
+  position: absolute;
+  top:0px;
+  right: 0px;
+}
+
+.search__form{
+  margin-top:make_em(60,16);
+  position: relative;
+
+  &:before{
+    position: absolute;
+    top:make_em(5,16);
+    left: 0px;
+    content:"";
+    width:34px;
+    height: 36px;
+    @include background_size("../img/icon--search.svg",no-repeat,center,center,contain);
+  }
+
+}
+.search__bar{
+  color: black;
+  font-size: make_em(40,16);
+  width: 100%;
+  border-bottom:1px solid #DCDCDC;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  padding: 0px 0px make_em(10,40) make_em(60,40);
+}
+
+.login__img{
+  display: block;
+  width: 220px;
+  margin:make_em(50,16) auto make_em(60,16);
+}
+
+.input--classic{
+  background: white;
+  border: 1px solid $color-border-form;
+  padding:make_em(8,16) make_em(20,16);
+  border-radius: 6px;
+  color:darken($color-title,15%);
+
+  &+&, &+.tags__container{
+    margin-top:make_em(10,16);
+  }
+
+  &:focus{
+    border-color: $color-primary;
+  }
+}
+
+select.input--classic{
+  padding-right: 12%;
+  background: url("../img/arrow--select.svg") no-repeat 95% center rgba(255, 255, 255, 0.1)
+}
+
+.input--full{
+  width: 100%;
+  display: block;
+}
+
+.form__front{
+  width: 450px;
+  margin:0px auto;
+}
+
+.form__separator{
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: make_em(18,16);
+  text-align: center;
+  margin:make_em(30,18) 0px;
+  line-height: 1;
+
+  &:before, &:after{
+    content:"";
+    height: 2px;
+    width: 25Px;
+    background: $color-border-form;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &:before{
+    margin-right: make_em(10,18);
+  }
+
+  &:after{
+    margin-left: make_em(10,18);
+  }
+}
+
+.form__submit{
+  margin-top:make_em(30,18);
+}
+
+.form__header{
+  margin-bottom: make_em(55,16);
+}
+
+.input--upload-banner{
+  padding-top:calc(475 / 1100 * 100%);
+  width: 100%;
+  display: block;
+  position: relative;
+  border:2px dashed $color-border-form;
+  margin-bottom:make_em(40,16);
+  border-radius: 6px;
+
+  &:hover{
+    border-color:$color-primary;
+    color:$color-primary;
+  }
+
+  &.bg--faked{
+    @include background_size("../img/bg--fake.jpg",no-repeat,center,center,cover);
+  }
+}
+
+
+
+.upload-img--museum{
+  padding-top:calc(475 / 1100 * 100%);
+}
+
+.upload-img--compte{
+  height: 100%;
+  z-index: 5;
+}
+.input--upload-img{
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top:0px;
+  opacity: 0;
+}
+
+.input__add{
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.add__icon{
+  width: 65px;
+}
+
+.input--textarea{
+  height: 200px;
+}
+
+.form__part{
+  &+&{
+    margin-top:make_em(40,16);
+  }
+}
+
+
+.input--classic{
+  &+.label--checkbox{
+    text-align: center;
+    margin-top:make_em(15,16);
+    display: block;
+  }
+}
+
+.label--checkbox{
+  color:darken($color-title,15%);
+}
+
+.label__checkbox{
+  margin-right: make_em(5,16);
+}
+
+.input--sided{
+  width: 100%;
+  display: table-cell;
+}
+
+label{
+
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  color:$color-title;
+  font-size: make_em(15,16);
+}
+.label--sided{
+  width: 25%;
+  padding-right:4%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+}
+
+.form__secret{
+  position: relative;
+  top:3px;
+  margin-left: make_em(5,16);
+  width: 14px;
+}
+
+.form__input{
+  display: table;
+  width: 100%;
+  &+&{
+    margin-top: make_em(20,16);
+  }
+}
+
+input:disabled{
+  background: darken($color-bg-back,2%);
+}
+
+
+.adress__selector{
+  margin-top:make_em(15,16);
+}
+.label--full{
+  display: block;
+  margin-bottom: make_em(5,15);
+}
+
+.form--button{
+  display: inline-block;
+  position: relative;
+  top:3px;
+
+  .bouton--header{
+    padding:make_em(8,16) make_em(20,16);
+  }
+}
+
+
+.button__label{
+  color:white;
+  display: block;
+}
+
+.star--label{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  @include transition_css(all,0.1s,ease-in-out,0s);
+  @include background_size("../img/icon--star--grey.svg",no-repeat,center,center,contain);
+
+  &+&{
+    margin-left: make_em(2,16);
+  }
+
+  &.etoile--hovered, &.etoile--selected{
+      background-image: url("../img/icon--star.svg");
+  }
+
+  &.etoile--unselected{
+    background-image: url("../img/icon--star--grey.svg");
+  }
+}
+
+.success--label{
+  width: 45px;
+  height:45px;
+  display: inline-block;
+  @include transition_css(all,0.25s,ease-in-out,0s);
+  @include background_size("../img/achievements/ac__createplace--bronze.svg",no-repeat,center,center,contain);
+
+  &+&{
+    margin-left: make_em(2,16);
+  }
+
+  &:hover{
+    transform:scale(1.1);
+  }
+}
+
+
+
+.label__star, .label__success{
+  width: 100%;
+  display: block;
+}
+
+.success--selected{
+  position: relative;
+  z-index:3;
+  &:after{
+    content:"";
+    display: block;
+    position: absolute;
+    top:-5px;
+    right: -5px;
+    width: 22px;
+    height: 22px;
+    @include background_size("../img/icon--selected.svg",no-repeat,center,center,contain);
+    border-radius: 50%;
+    box-shadow: 0px 2px 7px rgba(1,1,1,0.5);
+    z-index: 3;
+  }
+
+}
+
+.criteria__container{
+  margin-top: make_em(50,16);
+}
+
+.part--success{
+  text-align: center;
+  margin:0px auto make_em(40,16);
+}
+
+
+.input--answer{
+  width: 100%;
+  height: 30px;
+  padding-bottom:0px;
+  border-bottom: 1px solid $color-border-form;
+}
+
+.tags__container{
+  background: white;
+  border: 1px solid $color-border-form;
+  padding-bottom: 0px make_em(10,16);
+  border-radius: 6px;
+  color:darken($color-title,15%);
+  line-height: 1;
+}
+
+.tag__input{
+  width: 100%;
+  display: block;
+  padding:make_em(12,16) make_em(15,16);
+  background: none;
+  border-bottom:1px solid #DCDCDC;
+}
+
+.tag__delete{
+  display: inline-block;
+  font-size: make_em(20,16);
+  margin-left:0.15em;
+  padding: 0px;
+}

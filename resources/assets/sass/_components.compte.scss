@@ -1,0 +1,81 @@
+.compte__recap{
+  width: 350px;
+  padding: make_em(20,16) make_em(30,16);
+  display: table;
+}
+
+.compte__edit{
+  width: 700px;
+}
+
+
+.compte__recap, .compte__edit, .compte__menu{
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid $color-border;
+}
+
+
+.compte__form{
+  padding:0px make_em(45,16) make_em(40,16) make_em(30,16);
+}
+
+.recap__img{
+  display: table-cell;
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+  @include background_size("../img/place.jpg",no-repeat,center,center,cover);
+}
+
+.recap__infos{
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: make_em(20,16);
+}
+
+.recap__title{
+  color:$color-primary;
+  position: relative;
+  top:-2px;
+}
+
+.compte__picture-container{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  @include background_size("../img/place.jpg",no-repeat,center,center,cover);
+  position: relative;
+  margin:0px auto make_em(35,16);
+  @include transition_css(all,0.3s,ease,0s);
+
+  &:hover{
+    transform: scale(1.08);
+    box-shadow: 0px 2px 7px rgba(1,1,1,0.5);
+  }
+
+}
+
+.picture__dark{
+  background: rgba(1,1,1,0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 3;
+  top:0px;
+  left: 0px;
+}
+
+.picture__icon{
+  width: 40px;
+  position: absolute;
+  z-index: 4;
+  left: 55%;
+  top: 48%;
+  transform: translate(-50%,-50%);
+
+}

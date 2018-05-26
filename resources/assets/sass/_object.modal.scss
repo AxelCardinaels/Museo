@@ -1,0 +1,71 @@
+.modal--padded{
+  padding:make_em(40,16) make_em(50,16);
+}
+
+.modal--unpadded{
+  padding-top:make_em(40,16);
+}
+
+.modal__inside{
+  box-shadow: 0px 4px 10px 0px rgba(1,1,1,0.15);
+}
+
+
+.modal__illustration--large{
+  width: 170px;
+  margin:make_em(35,16) auto make_em(40,16);
+}
+
+.success__text{
+  font-size: make_em(18,16);
+}
+
+.modal__box{
+  padding:0px make_em(50,16);
+}
+
+.modal__close{
+  display: block;
+  width: 100%;
+  background: $color-primary;
+  color: white;
+  font-size: make_em(18,16);
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  padding:make_em(12,18) 0px;
+  margin-top: make_em(60,18);
+  @include transition_css(all,0.35s,ease-in-out,0s);
+  &:hover{
+    background-color: darken($color-primary,15%);
+  }
+}
+
+.modal__inside{
+  .remodal-close{
+    left:auto;
+    right:5px;
+    top:5px;
+  }
+
+  .remodal-close:before{
+    font-size: 35px;
+  }
+}
+
+.button__modal--fake{
+  margin-top: make_em(60,18);
+  width: 100%;
+  padding: 0px;
+
+  .modal__close{
+    margin-top: 0px;
+  }
+}
+
+.modal__description{
+  text-align: left;
+}
+
+.evaluation__content{
+  margin-top:make_em(40,16);
+}

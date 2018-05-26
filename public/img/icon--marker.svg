@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="118px" height="181px" viewBox="0 0 118 181" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 21</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M49.0113019,158.054183 C44.514123,149.243251 5.06926127,71.9552167 4.89457963,71.5882757 C1.6481213,64.8311703 -4.54747351e-13,57.5645212 -4.54747351e-13,49.9952762 C-4.54747351e-13,22.4277468 22.4299963,0 50,0 C77.5700037,0 100,22.4277468 100,49.9952762 C100,57.9862425 98.1702098,65.6207021 94.5604136,72.6873596 L50,159.992362 L49.0113019,158.054183 Z" id="path-1"></path>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="6" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.358978714 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-6" y="-6" width="112" height="171.992362">
+            <rect x="-6" y="-6" width="112" height="171.992362" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+        <path d="M50,25.3380585 C38.3653292,25.3380585 28.899331,34.7620076 28.899331,46.3458654 C28.899331,57.9288536 38.3653292,67.3528027 50,67.3528027 C61.6355442,67.3528027 71.1015424,57.9288536 71.1015424,46.3458654 C71.1015424,34.7620076 61.6355442,25.3380585 50,25.3380585 L50,25.3380585 Z" id="path-4"></path>
+        <mask id="mask-5" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-3" y="-3" width="48.2022115" height="48.0147443">
+            <rect x="25.899331" y="22.3380585" width="48.2022115" height="48.0147443" fill="white"></rect>
+            <use xlink:href="#path-4" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Utilisateur" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-21" transform="translate(9.000000, 7.000000)">
+            <g id="Fill-21">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#56BDD8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <use stroke="#FFFFFF" mask="url(#mask-3)" stroke-width="12" xlink:href="#path-1"></use>
+            </g>
+            <g id="Path">
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-4"></use>
+                <use stroke="#FFFFFF" mask="url(#mask-5)" stroke-width="6" xlink:href="#path-4"></use>
+            </g>
+        </g>
+    </g>
+</svg>

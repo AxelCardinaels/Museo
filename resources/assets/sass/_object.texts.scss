@@ -1,0 +1,25 @@
+.intro__container{
+  &--centered{
+    max-width: 550px;
+    margin:0px auto;
+    text-align: center;
+  }
+}
+
+
+.intro__text{
+  margin-top:make_em(25,16);
+}
+
+
+.about__text{
+  width: 550px;
+}
+
+.about__paragraph{
+  margin:make_em(25,16) 0px make_em(50,16);
+}
+
+.about__img{
+  width: 320px;
+}

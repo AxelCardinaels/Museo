@@ -1,0 +1,71 @@
+.map{
+  width: 100%;
+  height: 100%;
+}
+
+.search__map{
+  width: 100%;
+  height: 500px;
+  margin-top: make_em(60,16);
+  position: relative;
+  border-radius: 5px;
+  @include transition_css(all,0.3s,ease,0s);
+}
+
+.search__map--big{
+  height: 900px;
+}
+
+.map__enlarge{
+  position: absolute;
+  bottom:25px;
+  left:30px;
+}
+
+.map__text{
+  position: relative;
+  top:-2px;
+  margin-left:make_em(5,16);
+}
+
+
+.user__map{
+  width: 100%;
+  height: 500px;
+  @include transition_css(all,0.3s,ease,0s);
+}
+
+.user__map--big{
+  height: 900px;
+}
+
+.marker__content{
+  text-align: center;
+  position: relative;
+}
+
+.marker__link{
+  position: absolute;
+  display: block;
+  width:100%;
+  height: 100%;
+  top:0px;
+  left:0px;
+}
+
+
+.marker__banner{
+  @include background_size("../img/home.jpg",no-repeat,center,center,cover);
+  padding-top:calc(230 / 350 * 100%);
+  margin-bottom: make_em(15,16);
+  width: 200px;
+}
+
+.marker__note{
+  margin-top: 7px;
+  font-size: 14Px;
+}
+
+.marker__star{
+  width: 13px;
+}
