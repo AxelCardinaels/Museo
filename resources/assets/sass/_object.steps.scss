@@ -10,3 +10,26 @@
     margin-left: percentage(200/1680);
   }
 }
+
+
+@media (max-width: 850px){
+  .step__item{
+    width: 100%;
+
+    &+&{
+      margin:2.5em 0px 0px;
+    }
+  }
+
+  .step__img{
+    height: 155px;
+    margin-bottom: make_em(20,16);
+  }
+}
+
+@media (max-width: 500px){
+  .step__img{
+    height: 115px;
+    margin-bottom: make_em(10,16);
+  }
+}

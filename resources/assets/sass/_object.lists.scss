@@ -27,3 +27,10 @@
 .list--trophies{
   margin-top:make_em(30,16);
 }
+
+
+@media (max-width: 850px){
+  .list--steps{
+    margin-top: make_em(50,16);
+  }
+}

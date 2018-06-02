@@ -17,14 +17,14 @@ Route::get('/', ['as' => 'home', 'uses' => 'PageController@home']);
 Route::group(['prefix' => 'lieux'], function () {
   Route::get('ajouter', ['as' => 'place.add', 'uses' => 'PlaceController@add'])->middleware('auth');
   Route::get('getBack/{id}', ['as' => 'place.back', 'uses' => 'PlaceController@getBack']);
-  Route::post('create', ['as' => 'place.create', 'uses' => 'PlaceController@create']);
+  Route::post('create', ['as' => 'place.create', 'uses' => 'PlaceController@create'])->middleware('auth');
   Route::get('rechercher/{search?}/{category?}', ['as' => 'place.search', 'uses' => 'PlaceController@search']);
   Route::get('/{id}', ['as' => 'place.show', 'uses' => 'PlaceController@show']);
 });
 
 
 
-Route::group(['prefix' => 'compte'], function () {
+Route::group(['prefix' => 'compte', 'middleware' => 'auth'], function () {
   Route::get('/', ['as' => 'compte.edit', 'uses' => 'UserController@edit']);
   Route::get('/supprimer', ['as' => 'compte.remove', 'uses' => 'UserController@remove']);
 });
@@ -39,7 +39,7 @@ Route::group(['prefix' => 'auth'], function () {
   Route::get('connexion/facebook/callback',['as' => 'auth.facebook.callback', 'uses' => 'Auth\LoginController@handleProviderCallback']);
 });
 
-Route::group(['prefix' => 'membre'], function () {
+Route::group(['prefix' => 'membre', 'middleware' => 'auth'], function () {
   Route::get('/{id}', ['as' => 'user.show', 'uses' => 'UserController@show']);
   Route::post('update', ['as' => 'user.update', 'uses' => 'UserController@update']);
   Route::post('delete', ['as' => 'user.delete', 'uses' => 'UserController@delete']);

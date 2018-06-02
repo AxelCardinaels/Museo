@@ -69,3 +69,28 @@
 .marker__star{
   width: 13px;
 }
+
+
+@media (max-width: 1000px){
+  .user__map, .search__map{
+    height: 400px;
+  }
+}
+
+@media (max-width: 900px){
+  .user__map--enlarge, .map__enlarge{
+    display: none;
+  }
+}
+
+@media (max-width: 600px){
+  .user__map, .search__map{
+    height: 300px;
+  }
+}
+
+@media (max-width: 400px){
+  .user__map, .search__map{
+    height: 250px;
+  }
+}

@@ -41,3 +41,27 @@
 .header--user{
   position: relative;
 }
+
+
+@media (max-width: 900px){
+  .inside__content{
+    div{
+      width: 90%;
+    }
+  }
+  .background--home{
+    height: 500px;
+  }
+}
+
+@media (max-width: 600px){
+  .background--home{
+    height: 400px;
+  }
+}
+
+@media (max-width: 400px){
+  .background--home{
+    height: 300px;
+  }
+}

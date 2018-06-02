@@ -19,3 +19,30 @@ footer{
 .footer--compte{
   margin-top: 0px;
 }
+
+@media (max-width: 850px){
+  footer{
+      margin-top:make_em(60,14);
+  }
+}
+
+
+@media (max-width: 750px){
+  .footer__menu, .footer__infos{
+    width: 100%;
+    display: block;
+    float: none;
+    text-align: center;
+  }
+
+  .footer__infos{
+    margin-top:1em;
+  }
+
+}
+
+@media (max-width: 500px){
+  footer{
+      margin-top:make_em(40,14);
+  }
+}

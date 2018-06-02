@@ -3,7 +3,7 @@
 <footer class="clearfix footer--front @yield("footer__class")">
   <h3 class="hide">Pied de page</h2>
 
-    <nav class="column--left">
+    <nav class="column--left  footer__menu">
       <ul class="footer__list--front footer__list list-inline">
         <li class="footer__item--front footer__item">
           <a class="footer__link--front footer__link" href="{{route("home")}}" alt="Retourner à l'accueil">Accueil</a>
@@ -22,8 +22,8 @@
         @endif
       </ul>
     </nav>
-    <div class="column--right">
-      <p class="">Museo {{date("Y")}} - Développé par <a class="footer__disclaimer" target="_blank" alt="Afficher le site web d'Axel Cardinaels" href="http://www.axel-cardinaels.be">Axel Cardinaels</a></p>
+    <div class="column--right  footer__infos">
+      <p>Museo {{date("Y")}} - Développé par <a class="footer__disclaimer" target="_blank" alt="Afficher le site web d'Axel Cardinaels" href="http://www.axel-cardinaels.be">Axel Cardinaels</a></p>
     </div>
   </div>
 </footer>

@@ -112,3 +112,54 @@ h1,h2,h3,h4,h5{
 .title--marker{
   font-size: 15px;
 }
+
+@media (max-width: 1150px){
+  .title--recap{
+    font-size: make_em(20,16);
+  }
+
+  .title--sticky{
+    font-size: make_em(18,16);
+    padding:make_em(15,18) make_em(25,18);
+    margin-bottom:make_em(40,18);
+  }
+}
+
+@media (max-width: 900px){
+  .title--header{
+    font-size: make_em(30,16);
+  }
+}
+
+@media (max-width: 850px){
+  .title--step{
+    max-width: none;
+  }
+
+  .subtitle--section{
+    font-size: make_em(20,16);
+    margin-bottom: make_em(20,16);
+  }
+}
+
+@media (max-width: 600px){
+  .title--header{
+    font-size: make_em(23,15);
+  }
+  .title__lign{
+    display: inline-block;
+  }
+
+  .title--section{
+    font-size: make_em(21,15);
+    margin-bottom: 5px;
+  }
+  .subtitle--section{
+    font-size: make_em(17,15);
+    margin-bottom: make_em(20,18);
+  }
+
+  .title--sticky{
+    margin-bottom:make_em(25,18);
+  }
+}

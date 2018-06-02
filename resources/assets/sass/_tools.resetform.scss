@@ -5,13 +5,19 @@ input, textarea, form{
 	font-size: inherit;
 	outline: none;
 	border:transparent;
-
 }
 
 textarea{
 	resize: vertical;
+
 }
 
+
+input:not([type=checkbox]):not([type=radio]){
+	-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+}
 
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
    color:    $color-text;

@@ -32,7 +32,7 @@
       </div>
 
       <h2 class="section__title title--section">{{$user->fullName()}}</h2>
-      <p class="user__title">@if($user->achievement_id){{$user->title->title}}@endif</p>
+      <p class="user__title">@if($user->achievement_id){{$user->title->title}} @else Novice @endif</p>
     </div>
 
     <div class="user__description">

@@ -38,3 +38,22 @@
 .wrapper--modal--large{
   width: 600px;
 }
+
+@media (max-width: 1350px){
+  .wrapper--fiche{
+    width: 90%;
+  }
+}
+
+@media (max-width: 1200px){
+  .wrapper--smallest{
+    width:90%;
+  }
+}
+
+
+@media (max-width: 1150px){
+  .wrapper--small{
+    width: 90%;
+  }
+}

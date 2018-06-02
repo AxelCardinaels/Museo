@@ -1,3 +1,10 @@
 .section{
-  padding:make_em(80,16) 0px;
+  padding:calc(80 / 1680 * 100%) 0px;
+}
+
+
+@media (max-width: 600px){
+  .section{
+    padding:calc(50 / 600 * 100%) 0px;
+  }
 }

@@ -101,7 +101,7 @@
 
       <ul class="comments__list list--comments list-inline">
         @foreach($place->showableRatings as $rating)
-          <li class="comment__item">
+          <li class="comment__item comment__item--full">
             <article class="comment__article clearfix">
               <figure class="column--left comment__face" style="background-image:url('{{URL::asset($rating->user->avatar)}}');">
                 <figcaption class="hide">Photo de l'utilisateur {{$rating->user->fullName()}}</figcaption>

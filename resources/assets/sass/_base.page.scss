@@ -15,13 +15,9 @@ html, body{
 
 .main--compte{
 	background: $color-bg-back;
-	padding:make_em(80,16) 0px make_em(120,16);
+	padding:calc(80 / 1680 * 100%) 0px calc(120 / 1680 * 100%);
 }
 
-
-@media(max-width:930px){
-
-}
 
 .alert__container{
 	padding:make_em(10,16) make_em(20,16);
@@ -75,4 +71,10 @@ html, body{
 .no-datas{
   display: block;
 	margin-bottom: 1em;
+}
+
+@media (max-width: 600px){
+	html{
+		font-size: 15px;
+	}
 }

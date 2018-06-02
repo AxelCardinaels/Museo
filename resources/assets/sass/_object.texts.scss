@@ -12,14 +12,23 @@
 }
 
 
-.about__text{
-  width: 550px;
-}
-
 .about__paragraph{
   margin:make_em(25,16) 0px make_em(50,16);
 }
 
-.about__img{
-  width: 320px;
+
+@media (max-width: 700px){
+  .intro__text, .about__paragraph{
+    text-align: justify;
+  }
+}
+
+@media (max-width: 600px){
+  .intro__container{
+    &--centered{
+      max-width: none;
+      width: 90%;
+    }
+  }
+
 }

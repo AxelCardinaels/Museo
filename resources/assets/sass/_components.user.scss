@@ -105,3 +105,45 @@
 .user__comment{
   margin-bottom: make_em(35,16);
 }
+
+
+
+@media (max-width: 1150px){
+  .trophy__description{
+    max-width: 250px;
+  }
+}
+
+
+@media (max-width: 900px){
+  .user__picture{
+    width: 110px;
+    height: 110px;
+  }
+
+  .user__infos{
+    top:-60px;
+  }
+}
+
+
+@media (max-width: 650px){
+  .trophy__description{
+    max-width: 200%;
+  }
+
+  .user__title{
+    margin-bottom: make_em(15,16);
+  }
+}
+
+@media (max-width: 450px){
+  .user__picture{
+    width: 100px;
+    height: 100px;
+  }
+
+  .user__infos{
+    top:-55px;
+  }
+}

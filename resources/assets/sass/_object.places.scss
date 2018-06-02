@@ -104,3 +104,37 @@
 .search__places{
   margin-top:make_em(40,16);
 }
+
+@media (max-width: 1100px){
+  .place__item--small{
+    width: 23%;
+    display: inline-block;
+    margin:make_em(40,16) 1% 0px;
+  }
+}
+
+@media (max-width: 850px){
+  .place__item--large{
+    width: 46.5%;
+    &+&{
+      margin-left: 5%;
+    }
+
+    &:nth-child(n+3){
+      margin-top: make_em(30,16);
+      margin-left: 0px;
+    }
+  }
+}
+
+@media (max-width: 750px){
+  .place__item--small{
+    width: 45%;
+    display: inline-block;
+    margin:make_em(40,16) 2.5% 0px;
+  }
+
+  .star--larger{
+    height: 15px;
+  }
+}

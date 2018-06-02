@@ -11,8 +11,6 @@
   &+&, &+.menu__item--user{
     margin-left: make_em(45,16);
   }
-
-
 }
 
 .menu__list--front > li{
@@ -93,10 +91,6 @@
 .user__item--front{
   white-space: nowrap;
 
-  &+&{
-
-  }
-
   a{
     display: block;
     padding: make_em(14,16) 0px;
@@ -105,5 +99,40 @@
 
   a:hover{
     border-color: darken($color-border-form,15%);
+  }
+}
+
+@media (max-width: 1150px){
+
+  .compte__menu{
+    margin:make_em(25,16) 0px;
+  }
+
+  .compte__menu-link{
+    padding:make_em(12,16) make_em(20,16);
+  }
+}
+
+@media (max-width: 750px){
+  .menu__item--front{
+    &+&, &+.menu__item--user{
+      margin-left: make_em(30,16);
+    }
+  }
+}
+
+@media (max-width: 400px){
+  .menu__item--front{
+    &+&, &+.menu__item--user{
+      margin-left: make_em(15,16);
+    }
+  }
+
+  .compte__menu{
+    margin:make_em(15,15) 0px;
+  }
+
+  .compte__menu-link{
+    padding:make_em(10,15) make_em(20,15);
   }
 }

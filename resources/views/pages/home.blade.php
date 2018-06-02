@@ -84,17 +84,18 @@
     </ul>
 
     <div class="action__container container--centered">
-      <a href="#" class="bouton bouton--large bouton--action" title="Afficher tout le classement des musées">Afficher tout le classement</a>
+      <a href="{{route("place.search")}}" class="bouton bouton--large bouton--action" title="Afficher tout le classement des musées">Afficher tous les lieux</a>
     </div>
   </section>
 
   <section class="section wrapper--smallest wrapper--centered clearfix">
+    <img class="about__img column--right" src="{{URL::asset("img/about.png")}}" alt="Image a propos"/>
     <div class="column--left about__text">
       <h3 class="title--section">Museo, c'est quoi ?</h3>
       <p class="about__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam massa elit, interdum at augue et, tristique fermentum lacus. Integer id condimentum dolor. Nunc at erat id ex placerat molestie eget nec lacus. Nullam tellus ex, suscipit quis augue ut.</p>
       <a href="#" class="bouton bouton--large" title="Aller à la page 'à propos'">En savoir plus</a>
     </div>
 
-    <img class="about__img column--right" src="{{URL::asset("img/about.png")}}" alt="Image a propos"/>
+
   </section>
 @endsection
