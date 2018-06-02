@@ -27,10 +27,12 @@ class CreatePlacesTable extends Migration
             $table->string('website')->nullable();
             $table->longText('description')->nullable();
             $table->string('main_picture')->nullable();
-            $table->integer('creator_id')->unsigned()->nullable();
+            $table->integer('creator_id')->unsigned();
             $table->foreign('creator_id')->references('id')->on('users');
             $table->integer('category_id')->unsigned()->nullable();
             $table->foreign('category_id')->references('id')->on('categories');
+            $table->integer('freeDay_id')->unsigned()->nullable();
+            $table->foreign('freeDay_id')->references('id')->on('days');
             $table->timestamps();
         });
     }

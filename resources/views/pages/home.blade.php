@@ -22,7 +22,7 @@
   <section class="section">
     <div class="intro__container intro__container--centered">
       <h3 class="section__title title--section">Essayez Museo</h3>
-      <p class="intro__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam massa elit, interdum at augue et, tristique fermentum lacus. Integer id condimentum dolor. Nunc at erat id ex placerat molestie eget nec lacus. Nullam tellus ex, suscipit quis augue ut.</p>
+      <p class="intro__text">Museo vous propose de découvrir simplement de nouveaux lieux d'expositions et de les noter afin que la communauté puisse choisir leurs futures visites avec plus de confiance.</p>
     </div>
 
     <ul class="list--steps list-inline">
@@ -92,8 +92,8 @@
     <img class="about__img column--right" src="{{URL::asset("img/about.png")}}" alt="Image a propos"/>
     <div class="column--left about__text">
       <h3 class="title--section">Museo, c'est quoi ?</h3>
-      <p class="about__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam massa elit, interdum at augue et, tristique fermentum lacus. Integer id condimentum dolor. Nunc at erat id ex placerat molestie eget nec lacus. Nullam tellus ex, suscipit quis augue ut.</p>
-      <a href="#" class="bouton bouton--large" title="Aller à la page 'à propos'">En savoir plus</a>
+      <p class="about__paragraph">Museo est un projet de mémoire réalisé par Axel Cardinaels. La plateforme a pour but d'offrir à tous un moyen plus simple de découvrir de nouveaux lieux d'expositions et de pouvoir en connaître la qualité grâce aux notes entrées par la communauté.</p>
+      <a href="{{route("about")}}" class="bouton bouton--large" title="Aller à la page 'à propos'">En savoir plus</a>
     </div>
 
 

@@ -21,7 +21,7 @@
           <div class="modal__inside modal--unpadded wrapper--modal wrapper--modal--small wrapper--centered">
             <button data-remodal-action="close" class="remodal-close"></button>
             <div class="modal__box">
-              <h2 class="section--title">Nouveau titre déverrouillé !</h2>
+              <h2 class="title--modal">Nouveau titre déverrouillé !</h2>
               <p class="subtitle--success">{!! session('succes__title') !!}</p>
               <img class="modal__illustration modal__illustration--large" src="{{URL::asset("img/successillu.png")}}" alt="Image d'illustration succès dévérouillé"/>
               <p class="modal__text success__text">{!! session('succes') !!}</p>

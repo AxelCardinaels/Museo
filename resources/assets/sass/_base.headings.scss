@@ -113,6 +113,18 @@ h1,h2,h3,h4,h5{
   font-size: 15px;
 }
 
+.title--modal{
+  font-size: make_em(20,16)
+}
+
+.modal__subtitle{
+  text-align: left;
+  margin-bottom:make_em(12,16);
+}
+
+.title--step-large{
+  max-width: none;
+}
 @media (max-width: 1150px){
   .title--recap{
     font-size: make_em(20,16);
@@ -161,5 +173,9 @@ h1,h2,h3,h4,h5{
 
   .title--sticky{
     margin-bottom:make_em(25,18);
+  }
+
+  .title--logo{
+    height: 22px;
   }
 }

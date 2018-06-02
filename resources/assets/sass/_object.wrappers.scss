@@ -39,6 +39,11 @@
   width: 600px;
 }
 
+.wrapper--texts{
+  width: 1150px;
+  margin-left: 5%;
+}
+
 @media (max-width: 1350px){
   .wrapper--fiche{
     width: 90%;
@@ -55,5 +60,22 @@
 @media (max-width: 1150px){
   .wrapper--small{
     width: 90%;
+  }
+
+  .wrapper--texts{
+    width: 90%;
+    margin: 0px auto;
+  }
+}
+
+@media (max-width: 650px){
+  .wrapper--modal--large{
+    width: 95%;
+  }
+}
+
+@media (max-width: 550px){
+  .wrapper--modal--small{
+    width: 95%;
   }
 }

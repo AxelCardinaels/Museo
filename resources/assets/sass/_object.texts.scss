@@ -17,6 +17,18 @@
 }
 
 
+.section__texts{
+  margin-top:make_em(20,16);
+  column-count: 2;
+  text-align: justify;
+  column-gap: 50px;
+  orphans: 3;
+
+  p+p{
+    margin-top:make_em(24,16);
+  }
+}
+
 @media (max-width: 700px){
   .intro__text, .about__paragraph{
     text-align: justify;
@@ -29,6 +41,41 @@
       max-width: none;
       width: 90%;
     }
+  }
+
+}
+
+@media (max-width: 700px){
+  span.hide--responsive{
+    position:absolute;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip: rect(1px 1px 1px 1px);
+    width:1px;
+    height: 1px;
+  }
+
+  .map__text{
+    text-transform: capitalize;
+  }
+
+  .section__texts{
+    column-count: 1;
+    text-align: justify;
+    column-gap: 0px;
+    orphans: auto;
+    
+  }
+}
+
+@media (max-width: 450px){
+  a.hide--responsive{
+    position:absolute;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip: rect(1px 1px 1px 1px);
+    width:1px;
+    height: 1px;
   }
 
 }

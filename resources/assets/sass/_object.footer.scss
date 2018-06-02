@@ -1,6 +1,6 @@
 footer{
   font-size:make_em(14,16);
-  margin-top:make_em(120,14);
+  margin-top:calc(120 / 1680 * 100%);
   border-top: 1Px solid $color-border;
   padding:make_em(20,14) percentage(80/1680);
 }

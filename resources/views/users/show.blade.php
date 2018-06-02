@@ -97,8 +97,8 @@
 
   <div class="column--right user__stats">
     <div class="user__trophies">
-      <h3 class="section__subtitle subtitle--section">Titres débloquées par {{$user->first_name}}</h3>
-      <p>Les récompenses et status sont attribuées suite à des actions que vous réalisez sur le site. N’hésitez pas à contribuer régulièrement pour en débloquer de nouvelles !</p>
+      <h3 class="section__subtitle subtitle--section">Titres débloqués par {{$user->first_name}}</h3>
+      <p>Les récompenses et status sont attribués suite à des actions que vous réalisez sur le site. N’hésitez pas à contribuer régulièrement pour en débloquer de nouveaux !</p>
 
       <ul class="list--trophies user__trophies list-inline">
 

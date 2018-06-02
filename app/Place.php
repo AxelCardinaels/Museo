@@ -13,6 +13,10 @@ class Place extends Model
       return $this->hasOne('App\User', 'id', 'creator_id')->withTrashed();
     }
 
+    public function freeDay(){
+      return $this->hasOne('App\Day', 'id', 'freeDay_id');
+    }
+
     public function category(){
       return $this->BelongsTo('App\Category');
     }

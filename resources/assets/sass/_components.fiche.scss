@@ -1,7 +1,7 @@
 .fiche__splash{
   @include background_size("../img/place.jpg",no-repeat,center,center,cover);
   padding-top:calc(650 / 1520 * 100%);
-  margin-top:make_em(60,16);
+  margin-top:calc(60 / 1520 * 100%);
   position: relative;
 }
 
@@ -21,7 +21,8 @@
 
 
 .fiche__recap{
-  margin-top:make_em(50,16);
+  margin-top: calc(50 / 1520 * 100%);
+
 }
 
 .fiche__perk{
@@ -57,6 +58,10 @@
   height: 22px;
 }
 
+.icon--money{
+  height:20px;
+}
+
 .fiche__links{
   margin-top:make_em(35,16);
   padding-bottom: make_em(25,16);
@@ -82,6 +87,9 @@
 }
 
 .perk__item{
+  &:first-letter{
+    text-transform: capitalize;
+  }
   margin:0px make_em(5,16) make_em(8,16);
 }
 
@@ -237,9 +245,28 @@
   margin-bottom: make_em(15,16);
 }
 
+.comment__article{
+  position: relative;
+}
+
+.comment__icon{
+  width: 25px;
+  position: absolute;
+  left:5%;
+  top:30px;
+}
+
 @media (max-width: 1350px){
   .comment__texts{
     width: 86%;
+  }
+
+  .answer__form{
+    width: 88%;
+  }
+
+  .comment__icon{
+    left:6%;
   }
 }
 
@@ -253,6 +280,41 @@
     height: auto;
     padding-top:8%;
   }
+
+  .comment__icon{
+    top:40px;
+    left:5%;
+    width: 3.5%;
+  }
+}
+
+@media (max-width: 850px){
+  .splash__boutons{
+    bottom:15px;
+    left:20px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px){
+  .splash__boutons{
+    bottom:10px;
+    left: auto;
+    padding:0px 2.5%;
+  }
+
+  .comment__icon{
+    top:30px;
+    left:5%;
+    width: 4%;
+  }
+
+  .icon--heart{
+    width: 18Px;
+  }
+
+
+
 }
 
 @media (max-width: 600px){
@@ -270,5 +332,11 @@
     width: 12%;
     height: auto;
     padding-top:12%;
+  }
+
+  .comment__icon{
+    top:25px;
+    left:8%;
+    width: 6%;
   }
 }

@@ -42,9 +42,3 @@ function extractFromAdress(components, type){
             if (components[i].types[j]==type) return components[i].long_name;
     return "";
 }
-
-
-$(".label__success").click(function(){
-  $(".label__success").removeClass("success--selected");
-  $(this).addClass("success--selected");
-});

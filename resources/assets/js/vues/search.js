@@ -8,6 +8,7 @@ if( $('.vue--search').length ){
         madeMarkers : [],
         search : $(".search__bar").val(),
         category : '',
+        note : '',
         filters : true,
       },
 
@@ -36,8 +37,8 @@ if( $('.vue--search').length ){
               };
               var contentTitle = '<div class="marker__style">'+this.name+'</div>';
               var contentInfos = '<div class="marker__content"><a class="marker__link" target="_blank" href="/lieux/'+this.id+'"'
-              +'title="Afficher le lieux '+this.name+'"></a><figure style="background-image:url('
-              +"'"+'/'+this.main_picture+'"'+"'"+')" class="marker__banner" alt="Image du lieux '
+              +'title="Afficher le lieu '+this.name+'"></a><figure style="background-image:url('
+              +"'"+'/'+this.main_picture+'"'+"'"+')" class="marker__banner" alt="Image du lieu '
               +this.name+'"></figure><h4 class="title--marker">'+this.name+'</h4><p class="marker__note">'+
               this.note+' '+'<img class="marker__star" src="/img/icon--star.svg"/> / 5</p></div>';
               var infoTitle = new google.maps.InfoWindow({content: contentTitle, zIndex : 5});
@@ -104,6 +105,10 @@ if( $('.vue--search').length ){
             datas.category = this.category;
           }
 
+          if(this.note != ""){
+            datas.note = this.note;
+          }
+
 					var response = axios.get("/api/search/",{params : datas})
           .then(function(response){
 						that.markers = response.data;
@@ -123,6 +128,18 @@ if( $('.vue--search').length ){
 
         hideFilters : function(){
           this.filters = false;
+        },
+
+        removeFilter : function(item){
+          if(item == "category"){
+            this.category = '';
+          }
+
+          if(item == "note"){
+            this.note = '';
+          }
+
+          this.getMarkers();
         }
       },
   });

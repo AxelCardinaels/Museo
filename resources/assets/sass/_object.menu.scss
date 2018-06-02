@@ -116,15 +116,22 @@
 @media (max-width: 750px){
   .menu__item--front{
     &+&, &+.menu__item--user{
-      margin-left: make_em(30,16);
+      margin-left: make_em(20,16);
     }
+  }
+}
+
+@media (max-width: 600px){
+  .menu__container--front{
+    padding: make_em(20,16) percentage(80/1680);
   }
 }
 
 @media (max-width: 400px){
   .menu__item--front{
+    font-size: make_em(14,15);
     &+&, &+.menu__item--user{
-      margin-left: make_em(15,16);
+      margin-left: make_em(10,14);
     }
   }
 

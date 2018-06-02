@@ -13,6 +13,9 @@
 
     <div class="filter__container clearfix">
 
+      <div class="column--right filters__bouton">
+        <a href="#" class="bouton bouton--small" title="Ajouter des filtres" @click="hideFilters()" data-remodal-target="modal-search">Ajouter des filtres</a>
+      </div>
       <ul class="filters__list list--filters list-inline column--left">
         @if(isset($datas["search"]))
           <li class="filter__item">
@@ -20,13 +23,13 @@
           </li>
         @endif
         <li class="filter__item">
-          <a href="#" class="bouton bouton--small category--searched" v-if="category != '' && filters == true" title="Supprimer le filtre de catégorie">@{{categories[category - 1].title}}</a>
+          <a href="#" @click="removeFilter('category')" class="bouton bouton--small category--searched" v-if="category != '' && filters == true" title="Supprimer le filtre de catégorie">@{{categories[category - 1].title}} <span class="filter__delete">x</span></a>
+        </li>
+
+        <li class="filter__item">
+          <a href="#" @click="removeFilter('note')" class="bouton bouton--small category--searched" v-if="note != '' && filters == true" title="Supprimer le filtre de note">@{{note}} étoiles et plus <span class="filter__delete">x</span></a>
         </li>
       </ul>
-
-      <div class="column--right">
-        <a href="#" class="bouton bouton--small" title="Ajouter des filtres" @click="hideFilters()" data-remodal-target="modal-search">Ajouter des filtres</a>
-      </div>
     </div>
   </div>
 </header>
@@ -87,12 +90,81 @@
     <button data-remodal-action="close" class="remodal-close"></button>
     <div class="modal__box">
       <h3 class="section--title">Ajouter des filtres</h3>
+
       <form class="search__filters" action="{{route("place.search")}}" method="get" v-on:submit.prevent="getMarkers()">
         <input type="hidden" name="search" id="search" value="{{$search}}"/>
-        <select class="input--text input--classic input--full" name="category" id="category" required v-model="category" >
+
+        <h4 class="modal__subtitle">Catégorie du musée</h4>
+        <select class="input--text input--classic input--full" name="category" id="category" v-model="category" >
           <option value="" disabled>La catégorie du musée</option>
           <option v-for="category in categories" :value="category.id">@{{category.title}}</option>
         </select>
+
+        <div class="search__cochables">
+
+        <h4 class="modal__subtitle">Note du musée</h4>
+          <ul class="search__stars">
+
+            <li class="search__star">
+              <input type="radio" class="input--classic" id="note5" name="note" v-model="note" value="5"></input>
+              <label class="radio__star" for="note5">
+                <img class="star__img" src="{{URL::asset("img/icon--star.svg")}}" alt="Icone étoile de score">
+                <img class="star__img" src="{{URL::asset("img/icon--star.svg")}}" alt="Icone étoile de score">
+                <img class="star__img" src="{{URL::asset("img/icon--star.svg")}}" alt="Icone étoile de score">
+                <img class="star__img" src="{{URL::asset("img/icon--star.svg")}}" alt="Icone étoile de score">
+                <img class="star__img" src="{{URL::asset("img/icon--star.svg")}}" alt="Icone étoile de score">
+              </label>
+            </li>
+
+            <li class="search__star">
+              <input type="radio" class="input--classic" id="note4" name="note" v-model="note" value="4"></input>
+              <label class="radio__star" for="note4">
+                <img class="star__img" src="{{URL::asset("img/icon--star.svg")}}" alt="Icone étoile de score">
+                <img class="star__img" src="{{URL::asset("img/icon--star.svg")}}" alt="Icone étoile de score">
+                <img class="star__img" src="{{URL::asset("img/icon--star.svg")}}" alt="Icone étoile de score">
+                <img class="star__img" src="{{URL::asset("img/icon--star.svg")}}" alt="Icone étoile de score">
+                <img class="star__img" src="{{URL::asset("img/icon--star--grey.svg")}}" alt="Icone étoile de score vide">
+                et plus
+              </label>
+            </li>
+
+            <li class="search__star">
+              <input type="radio" class="input--classic" id="note3" name="note" v-model="note" value="3"></input>
+              <label class="radio__star" for="note3">
+                <img class="star__img" src="{{URL::asset("img/icon--star.svg")}}" alt="Icone étoile de score">
+                <img class="star__img" src="{{URL::asset("img/icon--star.svg")}}" alt="Icone étoile de score">
+                <img class="star__img" src="{{URL::asset("img/icon--star.svg")}}" alt="Icone étoile de score">
+                <img class="star__img" src="{{URL::asset("img/icon--star--grey.svg")}}" alt="Icone étoile de score vide">
+                <img class="star__img" src="{{URL::asset("img/icon--star--grey.svg")}}" alt="Icone étoile de score vide">
+                et plus
+              </label>
+            </li>
+
+            <li class="search__star">
+              <input type="radio" class="input--classic" id="note2" name="note" v-model="note" value="2"></input>
+              <label class="radio__star" for="note2">
+                <img class="star__img" src="{{URL::asset("img/icon--star.svg")}}" alt="Icone étoile de score">
+                <img class="star__img" src="{{URL::asset("img/icon--star.svg")}}" alt="Icone étoile de score">
+                <img class="star__img" src="{{URL::asset("img/icon--star--grey.svg")}}" alt="Icone étoile de score vide">
+                <img class="star__img" src="{{URL::asset("img/icon--star--grey.svg")}}" alt="Icone étoile de score vide">
+                <img class="star__img" src="{{URL::asset("img/icon--star--grey.svg")}}" alt="Icone étoile de score vide">
+                et plus
+              </label>
+            </li>
+
+            <li class="search__star">
+              <input type="radio" class="input--classic" id="note1" name="note" v-model="note" value="1"></input>
+              <label class="radio__star" for="note1">
+                <img class="star__img" src="{{URL::asset("img/icon--star.svg")}}" alt="Icone étoile de score">
+                <img class="star__img" src="{{URL::asset("img/icon--star--grey.svg")}}" alt="Icone étoile de score vide">
+                <img class="star__img" src="{{URL::asset("img/icon--star--grey.svg")}}" alt="Icone étoile de score vide">
+                <img class="star__img" src="{{URL::asset("img/icon--star--grey.svg")}}" alt="Icone étoile de score vide">
+                <img class="star__img" src="{{URL::asset("img/icon--star--grey.svg")}}" alt="Icone étoile de score vide">
+                et plus
+              </label>
+            </li>
+          </ul>
+        </div>
         <input type="submit" id="submit-search" class="hide" tabIndex="-1"/>
       </form>
 

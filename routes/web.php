@@ -12,6 +12,7 @@
 */
 
 Route::get('/', ['as' => 'home', 'uses' => 'PageController@home']);
+Route::get('a-propos', ['as' => 'about', 'uses' => 'PageController@about']);
 
 
 Route::group(['prefix' => 'lieux'], function () {
@@ -40,9 +41,10 @@ Route::group(['prefix' => 'auth'], function () {
 });
 
 Route::group(['prefix' => 'membre', 'middleware' => 'auth'], function () {
-  Route::get('/{id}', ['as' => 'user.show', 'uses' => 'UserController@show']);
   Route::post('update', ['as' => 'user.update', 'uses' => 'UserController@update']);
   Route::post('delete', ['as' => 'user.delete', 'uses' => 'UserController@delete']);
   Route::post('favoris/create/{id}', ['as' => 'favorite.create', 'uses' => 'UserController@createFavoris']);
   Route::post('favoris/delete/{id}', ['as' => 'favorite.delete', 'uses' => 'UserController@deleteFavoris']);
 });
+
+  Route::get('membre/{id}', ['as' => 'user.show', 'uses' => 'UserController@show']);

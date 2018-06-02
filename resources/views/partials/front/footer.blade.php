@@ -6,24 +6,24 @@
     <nav class="column--left  footer__menu">
       <ul class="footer__list--front footer__list list-inline">
         <li class="footer__item--front footer__item">
-          <a class="footer__link--front footer__link" href="{{route("home")}}" alt="Retourner à l'accueil">Accueil</a>
+          <a class="footer__link--front footer__link" href="{{route("home")}}" title="Retourner à l'accueil">Accueil</a>
         </li>
         <li class="footer__item--front footer__item">
-          <a class="footer__link--front footer__link" href="" alt="En savoir plus sur Museo">A propos</a>
+          <a class="footer__link--front footer__link" href="{{route("about")}}" title="A propos Museo">A propos</a>
         </li>
 
         @if(!Auth::check())
           <li class="footer__item--front footer__item">
-            <a class="footer__link--front footer__link" href="{{route("auth.connexion")}}" alt="Se connecter sur Besace">Connexion</a>
+            <a class="footer__link--front footer__link" href="{{route("auth.connexion")}}" title="Se connecter sur Museo">Connexion</a>
           </li>
           <li class="footer__item--front footer__item">
-            <a class="footer__link--front footer__link" href="{{route("auth.inscription")}}" alt="S'inscrire sur Besace">Inscription</a>
+            <a class="footer__link--front footer__link" href="{{route("auth.inscription")}}" title="S'inscrire sur Museo">Inscription</a>
           </li>
         @endif
       </ul>
     </nav>
     <div class="column--right  footer__infos">
-      <p>Museo {{date("Y")}} - Développé par <a class="footer__disclaimer" target="_blank" alt="Afficher le site web d'Axel Cardinaels" href="http://www.axel-cardinaels.be">Axel Cardinaels</a></p>
+      <p>Museo {{date("Y")}} - Développé par <a class="footer__disclaimer" target="_blank" title="Afficher le site web d'Axel Cardinaels" href="http://www.axel-cardinaels.be">Axel Cardinaels</a></p>
     </div>
   </div>
 </footer>

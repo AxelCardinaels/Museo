@@ -7,32 +7,32 @@
 <div class="fiche__splash wrapper--large wrapper--centered" style="background-image:url('{{URL::asset($place->main_picture)}}');">
   <div class="splash__boutons">
     <a class="bouton bouton--header" href="#" title="Afficher les photos du musées">
-      <span class="map__text">Afficher les photos</span>
+      <span class="map__text"><span class="hide--responsive">Afficher les</span> photos</span>
     </a>
 
     @if(Auth::check())
 
       @if(Auth::User()->isPlaceFavorited($place->id))
-      <form  class="form--button" method="POST" action="{{route("favorite.delete", ["id" => $place->id])}}">
+      <form  class="form--button form--favorite" method="POST" action="{{route("favorite.delete", ["id" => $place->id])}}">
         {{ csrf_field() }}
         <button type="submit" class="bouton bouton--header">
           <img class="map__icon icon--heart" src="{{URL::asset("img/icon--heart--red.svg")}}" alt="Icone favoris"/>
-          <span class="map__text">Retirer des favoris</span>
+          <span class="map__text hide--responsive">Retirer des favoris</span>
         </button>
       </form>
       @else
-        <form  class="form--button" method="POST" action="{{route("favorite.create", ["id" => $place->id])}}">
+        <form  class="form--button form--favorite" method="POST" action="{{route("favorite.create", ["id" => $place->id])}}">
           {{ csrf_field() }}
-          <button type="submit" class="bouton bouton--header form--button">
+          <button type="submit" class="bouton bouton--header">
             <img class="map__icon icon--heart" src="{{URL::asset("img/icon--heart.svg")}}" alt="Icone favoris"/>
-            <span class="map__text">ajouter aux favoris</span>
+            <span class="map__text hide--responsive">Ajouter aux favoris</span>
           </button>
         </form>
       @endif
     @else
-        <button type="submit" class="bouton bouton--header form--button" data-remodal-target="modal-join">
+        <button type="submit" class="bouton bouton--header form--button form--favorite" data-remodal-target="modal-join">
           <img class="map__icon icon--heart" src="{{URL::asset("img/icon--heart.svg")}}" alt="Icone favoris"/>
-          <span class="map__text">ajouter aux favoris</span>
+          <span class="map__text hide--responsive">Ajouter aux favoris</span>
         </button>
     @endif
 
@@ -49,7 +49,7 @@
         <h2 class="section__title title--section">{{$place->name}}</h2>
         <span class="place__category">{{$place->category->title}}</span>
       </div>
-      <p class="fiche__subtitle">Un Musée ajouté par <a href="{{route("user.show", ['id' => $place->user->id])}}" class="link--simple" title="Afficher le profil de {{$place->user->fullName()}}">{{$place->user->fullName()}}</a></p>
+      <p class="fiche__subtitle">Un lieu ajouté par <a href="{{route("user.show", ['id' => $place->user->id])}}" class="link--simple" title="Afficher le profil de {{$place->user->fullName()}}">{{$place->user->fullName()}}</a></p>
     </div>
 
     <div class="fiche__stars">
@@ -71,12 +71,20 @@
         <p class="ratings__text column--left">{{count($place->ratings)}} avis</p>
       </div>
 
-      <p class="fiche__perk">3ème dans le top 5 du site!</p>
+      @foreach($firstFive as $five)
+        @if($five == $place->id && $place->note != 0)
+          <p class="fiche__perk">Classé N°{{$loop->index + 1}} dans le top 5 du site!</p>
+        @endif
+      @endforeach
     </div>
 
     <div class="fiche__description">
       <h3 class="hide">Description du musée</h3>
-      {!! nl2br(e($place->description)) !!}
+      @if($place->description)
+        {!! nl2br(e($place->description)) !!}
+      @else
+        <p>Ce lieu n'a pas encore de description</p>
+      @endif
     </div>
 
     <div class="fiche__links">
@@ -88,8 +96,22 @@
 
       @if($place->website)
         <p class="fiche__website fiche__datas">
-          <img class="icon--website datas__icon" src="{{URL::asset("img/icon--web.svg")}}" alt="Icone localisation"/>
+          <img class="icon--website datas__icon" src="{{URL::asset("img/icon--web.svg")}}" alt="Icone site web"/>
           <a href="{{$place->website}}" target="_blank" class="localisation__link link--icon" title="Afficher le site web">{{$place->website}}</a>
+        </p>
+      @endif
+
+      @if($place->freeDay_id)
+        <p class="fiche__website fiche__datas">
+          <img class="icon--money datas__icon" src="{{URL::asset("img/icon--money.svg")}}" alt="Icone prix"/>
+          <span class="link--icon">
+            @if($place->freeDay_id == 8)
+              Gratuit tous les jours
+            @else
+              Gratuit le premier {{$place->freeDay->name}} du mois
+            @endif
+
+            </span>
         </p>
       @endif
     </div>
@@ -97,7 +119,7 @@
     <div class="fiche__commentaires">
       <h3 class="section__subtitle subtitle--spaced">Avis et commentaires des utilisateurs</h3>
 
-      <a href="#" class="bouton bouton--small bouton--comments" @if(Auth::check()) data-remodal-target="modal-evaluation" @else data-remodal-target="modal-join" @endif title="Ajouter une évaluation">Vous l’avez visité ? Ajoutez une évaluation!</a>
+      <a href="#" class="bouton bouton--small bouton--comments" @if(Auth::check()) data-remodal-target="modal-evaluation" @else data-remodal-target="modal-join" @endif title="Ajouter une évaluation"><span class="hide--responsive">Vous l’avez visité ? </span>Ajoutez une évaluation!</a>
 
       <ul class="comments__list list--comments list-inline">
         @foreach($place->showableRatings as $rating)
@@ -106,6 +128,8 @@
               <figure class="column--left comment__face" style="background-image:url('{{URL::asset($rating->user->avatar)}}');">
                 <figcaption class="hide">Photo de l'utilisateur {{$rating->user->fullName()}}</figcaption>
               </figure>
+
+              @if($rating->user->achievement_id)<img class="comment__icon" src="{{URL::asset($rating->user->title->icon)}}" alt="Icone du titre {{$rating->user->title->title}}"> @endif
 
               <div class="column--right comment__texts">
                 <h4 class="comment__title title--comment">{{$rating->title}}</h4>
@@ -286,7 +310,7 @@
     </ul>
 
     <div class="fiche__perks">
-      <h3 class="section__subtitle">Caractéristiques du musée</h3>
+      <h3 class="section__subtitle">Tags du musée</h3>
       <ul class="list--perks list-inline">
         @if($place->tags->isEmpty())
           <li class="no-datas">Désolé, ce musée n'a pas encore de tags !</li>
@@ -307,7 +331,7 @@
     <div class="modal__inside modal--unpadded wrapper--modal wrapper--modal--large wrapper--centered">
       <button data-remodal-action="close" class="remodal-close"></button>
       <div class="modal__box">
-        <h3 class="section--title">Racontez-nous votre expérience !</h3>
+        <h3 class="title--modal">Racontez-nous votre expérience !</h3>
         <p class="subtitle--success">Concernant le lieu "{{$place->name}}"</p>
         <img class="modal__illustration modal__illustration--large" src="{{URL::asset("img/ratingillu.png")}}" alt="Image d'illustration du processus d'évaluation"/>
         <div class="evaluation__content">
@@ -340,7 +364,7 @@
     <div data-remodal-id="modal-criteria-{{$loop->index}}" class="remodal modal" data-remodal-options="closeOnOutsideClick: false">
       <div class="modal__inside modal--unpadded wrapper--modal wrapper--modal--large wrapper--centered">
         <div class="modal__box">
-          <h3 class="section--title">Racontez-nous votre expérience !</h3>
+          <h3 class="title--modal">Racontez-nous votre expérience !</h3>
           <p class="subtitle--success">Concernant le lieu "{{$place->name}}"</p>
 
           <div class="evaluation__content">
@@ -383,7 +407,7 @@
   <div data-remodal-id="modal-criteria-final" class="remodal" data-remodal-options="closeOnEscape: false, closeOnOutsideClick: false">
     <div class="modal__inside modal--unpadded wrapper--modal wrapper--modal--large wrapper--centered">
       <div class="modal__box">
-        <h3 class="section--title">Merci d'avoir partagé votre expérience !</h3>
+        <h3 class="title--modal">Merci d'avoir partagé votre expérience !</h3>
         <p class="subtitle--success">Concernant le lieu "{{$place->name}}"</p>
         <img class="modal__illustration modal__illustration--large" src="{{URL::asset("img/connexion.png")}}" alt="Image d'illustration du processus d'évaluation"/>
         <p class="modal__text success__text">Votre avis et vos notes ont été ajoutés sur la fiche, merci !</p>
@@ -397,7 +421,7 @@
   <div class="modal__inside modal--unpadded wrapper--modal wrapper--modal--large wrapper--centered">
     <button data-remodal-action="close" class="remodal-close"></button>
     <div class="modal__box">
-      <h3 class="section--title">Rejoignez Museo pour vivre une expérience sur mesure !</h3>
+      <h3 class="title--modal">Rejoignez Museo pour vivre une expérience sur mesure !</h3>
       <img class="modal__illustration modal__illustration--large" src="{{URL::asset("img/connexion.png")}}" alt="Image d'illustration du processus d'évaluation"/>
       <p class="modal__text success__text">En créant un compte, vous pourrez commenter, aimer, partager du contenu ainsi que personnaliser votre profil ! Et bien plus encore !</p>
     </div>

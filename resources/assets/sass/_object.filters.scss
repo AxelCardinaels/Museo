@@ -1,10 +1,64 @@
 .filter__item{
+
   &+&{
-    margin-left: make_em(15,16);
+    margin-left: make_em(10,16);
   }
+   a{
+     position: relative;
+     display: block;
+     padding:0.5em 1em;
+   }
+
+   a:hover{
+     background: #FF4A4A;
+   }
 }
+
+.filter__delete{
+  position: absolute;
+  top:-10px;
+  right: -10px;
+  background: #FF4A4A;
+  display: inline-block;
+  text-align: center;
+  line-height: 1.2;
+  width: 25px;
+  height: 26Px;
+  font-size: 1.2em;
+  border-radius: 50%;
+}
+
 
 
 .filter__container{
   margin-top:make_em(30,16);
+}
+
+
+@media (max-width: 800px){
+  .filters__bouton, .list--filters{
+    float: none;
+    display: block;
+    width: 100%;
+  }
+
+  .filter__item{
+    margin-top: make_em(20,16);
+    font-size: make_em(15,16);
+  }
+
+  .filters__bouton a{
+    display: block;
+    text-align: center;
+  }
+
+}
+@media (max-width: 600px){
+  .filter__delete{
+    top:-9px;
+    right: -10px;
+    width: 22px;
+    height: 21Px;
+    font-size: 1.1em;
+  }
 }

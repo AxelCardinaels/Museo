@@ -29,7 +29,7 @@
 
         <fieldset class="column--right column--more form__part">
           <h3 class="section__subtitle subtitle--spaced-small">Informations supplémentaires</h3>
-          <input type="text" class="input--text input--classic input--full" name="website" id="website" value="{{old('website')}}" placeholder="Quel est le site web du musée ?"/>
+          <input type="url" class="input--text input--classic input--full" name="website" id="website" value="{{old('website')}}" placeholder="Quel est le site web du musée ?"/>
           <input type="text" class="input--text input--classic input--full" v-model.lazy="adress" v-debounce="500" @change="searchPlace()" value="" placeholder="Quelle est l'adresse complète (rue, ville, pays) du musée ?" required/>
           <div class="adress__selector" v-if="showAdresses == 1">
             <label class="label--classic label--full">Sélectionnez l'adresse</label>
@@ -52,10 +52,24 @@
 
         <fieldset class="column--right column--more form__part">
           <h3 class="section__subtitle subtitle--spaced-small">Ajoutez les caractéristiques du musée</h3>
+          <select class="input--text input--classic input--full" name="free" id="free" required>
+            <option selected disabled>Ce musée est il parfois gratuit ?</option>
+            <option value="0" {{ (old('free') == 0) ? "selected" : "" }}>Ce musée n'est jamais gratuit</option>
+            @foreach($days as $day)
+                <option value="{{$day->id}}" {{ (old('free') == $day->id) ? "selected" : "" }}>
+                  @if($day->id == 8)
+                    Ce musée est toujours gratuit
+                  @else
+                    Le premier {{$day->name}} du mois
+                  @endif
+              </option>
+            @endforeach
+          </select>
+
           <select class="input--text input--classic input--full" name="category" id="category" required>
             <option value="" selected disabled>La catégorie du musée</option>
             @foreach($categories as $category)
-              <option value="{{$category->id}}">{{$category->title}}</option>
+              <option value="{{$category->id}}" {{ (old('category') == $category->id) ? "selected" : "" }}>{{$category->title}}</option>
             @endforeach
           </select>
 
@@ -71,6 +85,8 @@
           </div>
         </fieldset>
 
-        <input type="submit" id="submit-form" class="hide" />
+        <a title="Publier le musée"><label for="submit-form" class="bouton bouton--large submit--museum" tabindex="0">Publier le musée</label></a>
+
+         <input type="submit" id="submit-form" class="hide" />
       </form>
   </div>

@@ -27,7 +27,14 @@ class PlaceController extends Controller
       });
     }
 
-    $places = $query->with("ratings")->get();
+    if($request->note){
+      $note = $request->note;
+      $query = $query->where(function($query) use ($note){
+        $query->where("note",">=", $note);
+      });
+    }
+
+    $places = $query->orderBy("note", "DESC")->with("ratings")->get();
 
     foreach($places as $place){
       $place->stars = $place->finalNote();

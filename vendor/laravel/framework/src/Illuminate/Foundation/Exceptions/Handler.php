@@ -217,7 +217,7 @@ class Handler implements ExceptionHandlerContract
     {
         return $request->expectsJson()
                     ? response()->json(['message' => $exception->getMessage()], 401)
-                    : redirect()->guest(route('auth.connexion'))->with("Fail","Désolé, vous devez être connecté pour ajouter un musée !");
+                    : redirect()->guest(route('auth.connexion'))->with("Fail","Désolé, vous devez être connecté pour accéder à cette page !");
     }
 
     /**

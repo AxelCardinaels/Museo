@@ -13,6 +13,7 @@
   font-weight: 600;
   box-shadow: 0px 1px 13px 1Px rgba(1,1,1,0.2);
   border-radius: 7px;
+  display: inline-block;
 
   &:hover{
     background-color: darken($color-primary,15%);
@@ -46,11 +47,11 @@
 
 .bouton--large{
   font-size: make_em(18,16);
-  padding:make_em(12,18) make_em(25,18);
+  padding:make_em(10,18) make_em(22,18);
 }
 
 .bouton--small{
-  padding:make_em(11,16) make_em(18,16);
+  padding:make_em(9,16) make_em(16,16);
 }
 
 .action__container{
@@ -100,6 +101,11 @@
   .action__container{
     margin-top:make_em(60,16);
   }
+
+  .bouton--header{
+    font-size: make_em(15,16);
+    padding:make_em(8,15) make_em(15,15);
+  }
 }
 
 
@@ -114,10 +120,18 @@
     font-size: make_em(16,16);
     padding:make_em(12,18) make_em(20,18);
   }
+
+  .bouton--small{
+    padding:make_em(10,16) make_em(18,15);
+  }
 }
 
 @media (max-width: 400px){
   .action__container{
     margin-top:make_em(45,16);
+  }
+
+  .bouton--small{
+    padding:make_em(8,15) make_em(18,15);
   }
 }

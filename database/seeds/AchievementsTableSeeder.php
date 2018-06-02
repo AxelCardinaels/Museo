@@ -68,7 +68,7 @@ class AchievementsTableSeeder extends Seeder
         DB::table('achievements')->insert(array(
           'id'=> 6,
           'title'=> "Critique amateur",
-          'description'=>'Bravo, vous avez publié votre premier avis sur un lieux !',
+          'description'=>'Bravo, vous avez publié votre premier avis sur un lieu !',
           'points'=>'1',
           'icon'=>'img/achievements/ac__createrating--bronze.svg',
           'type'=>'RatingCreated',

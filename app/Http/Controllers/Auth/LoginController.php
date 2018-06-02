@@ -45,7 +45,7 @@ class LoginController extends Controller
           return redirect()->back()->withErrors($validator)->withInput();
         }else{
             if(Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
-                return redirect("/")->with('status', 'Vous êtes maintenant connecté!');
+                return redirect()->intended('/')->with('status', 'Vous êtes maintenant connecté!');
             }else{
               $errors = ["Le mot de passe est incorrect."];
               return redirect()->back()->withErrors($errors)->withInput();

@@ -29,7 +29,7 @@
 }
 
 .search__form{
-  margin-top:make_em(60,16);
+  margin-top:calc(60 / 1520 * 100%);
   position: relative;
 
   &:before{
@@ -122,7 +122,7 @@ select.input--classic{
 }
 
 .form__header{
-  margin-bottom: make_em(55,16);
+  margin-bottom: calc(55 / 1520 * 100%);
 }
 
 .input--upload-banner{
@@ -370,6 +370,76 @@ input:disabled{
 
 
 
+.submit--museum{
+  margin-top:1.5em;
+  display: inline-block;
+}
+
+.search__stars{
+  text-align: left;
+  list-style: none;
+}
+
+.search__cochables{
+  margin-top:1.5em;
+}
+
+.radio__star{
+  margin-left: 0.3em;
+  img{
+      height: 18px;
+  }
+}
+
+.label--secret{
+  position: relative;
+  &:after, &:before{
+    display: none;
+    background: $color-primary;
+    position: absolute;
+  }
+  &:after{
+    content:"Ceci restera privé";
+    color:white;
+    font-size: 0.95em;
+    font-family: 'Nunito', sans-serif;
+    padding:0.2em 0.6em;
+    border-radius: 4px;
+    top:-28px;
+    left: 14px;
+  }
+
+  &:before{
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    transform: rotate(45deg);
+    right:27px;
+    top:-7px;
+  }
+
+  &:hover:before, &:hover:after{
+    display: block;
+  }
+}
+@media (max-width: 1150px){
+  .search__bar{
+    font-size: make_em(35,16);
+  }
+
+  .label--secret{
+    &:after{
+      left: auto;
+      right:10%;
+    }
+
+    &:before{
+      right:17%;
+    }
+  }
+}
+
 @media (max-width: 900px){
   .header__input{
     font-size: make_em(16,16);
@@ -386,12 +456,44 @@ input:disabled{
   .login__img{
     width: 170px;
   }
+
+  .search__bar{
+    font-size: make_em(30,16);
+    padding: 0px 0px make_em(10,25) make_em(40,25);
+  }
+
+  .search__form{
+    &:before{
+      top:make_em(5,16);
+      width:30px;
+      height: 32px;
+    }
+  }
+}
+
+
+@media (max-width: 850px){
+  .submit--museum{
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
 }
 
 @media (max-width: 800px){
   .label--sided{
     width: 35%;
   }
+
+    .label--secret{
+      &:after{
+        right:7.5%;
+      }
+
+      &:before{
+        right:11.5%;
+      }
+    }
 }
 
 @media (max-width: 700px){
@@ -438,6 +540,30 @@ input:disabled{
 
   .input--textarea{
     height: 150px;
+  }
+
+  .search__bar{
+    font-size: make_em(25,15);
+    padding: 0px 0px make_em(10,25) make_em(10,25);
+  }
+
+  .search__form{
+    &:before{
+      display: none;
+    }
+  }
+
+  .label--secret{
+    &:after{
+      right:auto;
+      left: 0%;
+    }
+
+    &:before{
+      right:auto;
+      left: 5%;
+      top:-9Px;
+    }
   }
 }
 

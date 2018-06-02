@@ -116,12 +116,12 @@
 @media (max-width: 850px){
   .place__item--large{
     width: 46.5%;
+      margin-top: make_em(30,16);
     &+&{
       margin-left: 5%;
     }
 
-    &:nth-child(n+3){
-      margin-top: make_em(30,16);
+    &:nth-child(odd){
       margin-left: 0px;
     }
   }
@@ -134,7 +134,7 @@
     margin:make_em(40,16) 2.5% 0px;
   }
 
-  .star--larger{
+  .star--larger, .star--large{
     height: 15px;
   }
 }

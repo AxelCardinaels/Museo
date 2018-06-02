@@ -25,8 +25,8 @@ if( $('.vue--user').length ){
               };
               var contentTitle = '<div class="marker__style">'+this.name+'</div>';
               var contentInfos = '<div class="marker__content"><a class="marker__link" target="_blank" href="/lieux/'+this.id+'"'
-              +'title="Afficher le lieux '+this.name+'"></a><figure style="background-image:url('
-              +"'"+'/'+this.main_picture+'"'+"'"+')" class="marker__banner" alt="Image du lieux '
+              +'title="Afficher le lieu '+this.name+'"></a><figure style="background-image:url('
+              +"'"+'/'+this.main_picture+'"'+"'"+')" class="marker__banner" alt="Image du lieu '
               +this.name+'"></figure><h4 class="title--marker">'+this.name+'</h4><p class="marker__note">'+
               this.note+' '+'<img class="marker__star" src="/img/icon--star.svg"/> / 5</p></div>';
               var infoTitle = new google.maps.InfoWindow({content: contentTitle, zIndex : 5});
@@ -72,6 +72,11 @@ if( $('.vue--user').length ){
             map.fitBounds(bounds);
             if(markers.length == 1){
               map.setZoom(12);
+            }
+
+            if(markers.length == 0){
+              var center =  {lat: 50.6325574, lng: 5.5796662};
+              map.setCenter(center);
             }
 
 				},

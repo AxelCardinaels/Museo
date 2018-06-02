@@ -12,4 +12,8 @@ class PageController extends Controller
       return view("pages.home",["places" => $places]);
     }
 
+    public function about(){
+      return view('pages.about');
+    }
+
 }

@@ -9,6 +9,7 @@ use App\Criteria;
 use App\Rating;
 use App\Category;
 use App\tag;
+use App\Day;
 use Carbon\Carbon;
 use Auth, Redirect, Image, AchievementManager, DB;
 use Illuminate\Support\Facades\Validator;
@@ -17,6 +18,7 @@ class PlaceController extends Controller
 {
 
   public function show($id){
+    $firstFive = Place::orderBy("note", "DESC")->take(5)->get()->pluck("id");
     $place = Place::find($id);
     $criterias = Criteria::where("active",1)->get();
     $notesCriteria = [];
@@ -44,7 +46,7 @@ class PlaceController extends Controller
     }
 
 
-    return view("places.show", ["place" => $place, "criterias" => $criterias, "detailledNotes" => $notesCriteria]);
+    return view("places.show", ["place" => $place, "criterias" => $criterias, "detailledNotes" => $notesCriteria, "firstFive" => $firstFive]);
   }
 
   public function search(Request $request){
@@ -54,7 +56,8 @@ class PlaceController extends Controller
 
   public function add(){
     $categories = Category::where('active',1)->orderBy('title')->get();
-    return view("places.add", ["categories" => $categories]);
+    $days = Day::get();
+    return view("places.add", ["categories" => $categories, "days" => $days]);
   }
 
   protected function validator(array $data)
@@ -67,21 +70,25 @@ class PlaceController extends Controller
         'number' => 'required',
         'main_picture' => 'file|max:2500',
         'category' => 'required',
+        'free' => 'required',
+        'website' => 'url',
     ], [
         'name.required' => 'Vous devez renseigner le nom du musée.',
+        'category.required' => 'Le musée doit avoir une catégorie.',
+        'free.required' => 'Les informations de gratuité sont nécessaires.',
         'number.required' => 'L’adresse n’est pas complète ! Elle doit comporter un numéro.',
         'country.required' => 'L’adresse n’est pas complète ! Elle doit comporter un pays.',
         'state.required' => 'L’adresse n’est pas complète ! Elle doit comporter une rue, un numéro et la ville',
         'adress.required' => 'L’adresse n’est pas complète ! Elle doit comporter une rue, un numéro, la ville et le pays.',
         'main_picture.max' => 'Désolé, la photo ne peut pas dépasser les 2,5 Mo !',
-        'adress.unique' => 'Cette adresse est déja utilisée. Avez vous vérifiez si ce musée n’existait pas sur le site ?'
+        'adress.unique' => 'Cette adresse est déja utilisée. Avez vous vérifiez si ce musée n’existait pas sur le site ?',
+        'website.url' => 'Le format de l’adresse du site web n’est pas correct.',
 
     ]);
   }
 
   protected function create(Request $request)
   {
-
       $this->validator($request->all())->validate();
       $place = Place::create([
           'name' => $request['name'],
@@ -110,16 +117,22 @@ class PlaceController extends Controller
         $datas["main_picture"] = "uploaded/places/".$main_pictureFileName;
       }
 
-      $place->update($datas);
-
-      $tags = explode(",",$request["allTags"]);
-      $tagsDatas = [];
-      foreach($tags as $tag){
-        $array = ["title" => $tag, "place_id" => $place->id, "user_id" => Auth::id(), "created_at" => Carbon::now()->format('Y-m-d H:i:s')];
-        array_push($tagsDatas, $array);
+      if($request->free != 0){
+        $datas["freeDay_id"] = $request->free;
       }
 
-      $savedTags = Tag::insert($tagsDatas);
+      $place->update($datas);
+
+      if($request->allTags != null){
+        $tags = explode(",",$request["allTags"]);
+        $tagsDatas = [];
+        foreach($tags as $tag){
+          $array = ["title" => $tag, "place_id" => $place->id, "user_id" => Auth::id(), "created_at" => Carbon::now()->format('Y-m-d H:i:s')];
+          array_push($tagsDatas, $array);
+        }
+        $savedTags = Tag::insert($tagsDatas);
+      }
+
       //Progression des succès et check si l'utilisateur en a débloqué un nouveau
       $newSuccess = AchievementManager::ManageAchievements(Auth::User(), "PlaceCreated");
 

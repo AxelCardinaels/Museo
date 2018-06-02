@@ -69,3 +69,36 @@
 .evaluation__content{
   margin-top:make_em(40,16);
 }
+
+@media (max-width: 850px){
+  .success__text{
+    font-size: make_em(16,16);
+  }
+  .modal__illustration--large{
+    width: 150px;
+    margin:make_em(35,16) auto make_em(30,16);
+  }
+
+  .modal__close, .button__modal--fake{
+    margin-top: make_em(40,18);
+  }
+
+  .modal__box{
+    padding:0px 10%;
+  }
+
+  .evaluation__content{
+    margin-top:make_em(15,16);
+  }
+}
+
+@media (max-width: 500px){
+  .modal__illustration--large{
+    width: 120px;
+    margin:make_em(35,16) auto make_em(20,16);
+  }
+
+  .modal__box{
+    padding:0px 5%;
+  }
+}
