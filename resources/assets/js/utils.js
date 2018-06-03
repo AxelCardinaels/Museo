@@ -33,7 +33,6 @@ $(".success--label").click(function(){
   $(this).addClass("success--selected");
 });
 
-
 if( $('[type="date"]').prop('type') != 'date' ) {
   flatpickr.localize(flatpickr.l10ns.fr);
   flatpickr('[type="date"]');

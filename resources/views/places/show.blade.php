@@ -6,9 +6,12 @@
 
 <div class="fiche__splash wrapper--large wrapper--centered" style="background-image:url('{{URL::asset($place->main_picture)}}');">
   <div class="splash__boutons">
+
+    <!--
     <a class="bouton bouton--header" href="#" title="Afficher les photos du musées">
       <span class="map__text"><span class="hide--responsive">Afficher les</span> photos</span>
     </a>
+  -->
 
     @if(Auth::check())
 
