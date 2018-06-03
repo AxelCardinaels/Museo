@@ -3,6 +3,7 @@
     @include( "partials.head" )
 
     <body>
+      <div class="hide baseurl">{{ url('/') }}</div>
       <div class="@yield("body__class")">
       @if (session('status'))
         <div class="alert__container alert--success">
@@ -36,4 +37,6 @@
         @include( "partials.front.footer" )
       </div>
     </body>
+
+
 </html>

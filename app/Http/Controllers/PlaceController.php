@@ -8,7 +8,7 @@ use App\Place;
 use App\Criteria;
 use App\Rating;
 use App\Category;
-use App\tag;
+use App\Tag;
 use App\Day;
 use Carbon\Carbon;
 use Auth, Redirect, Image, AchievementManager, DB;

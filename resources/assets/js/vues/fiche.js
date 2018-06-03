@@ -10,6 +10,8 @@ if( $('.vue--fiche').length ){
           place_id : '',
           user_id : '',
         },
+
+        baseUrl : $(".baseurl").text(),
         loadedRatings : [],
         comments : [],
         createdRating : null,
@@ -59,7 +61,7 @@ if( $('.vue--fiche').length ){
           }
 
           var that = this;
-					var response = axios.post("/api/rating/create", this.newRating)
+					var response = axios.post(that.baseUrl+"/api/rating/create", this.newRating)
           .then(function(response){
             if(response.data.errors){
               that.errors = response.data.errors;
@@ -87,7 +89,7 @@ if( $('.vue--fiche').length ){
             var criteria = {note : that.picked, criteria_id : criteria_id, rating_id : that.createdRating.id};
           }
 
-          var response = axios.post("/api/rating/criteria/create", criteria)
+          var response = axios.post(that.baseUrl+"/api/rating/criteria/create", criteria)
           .then(function(response){
             if(response.data.errors){
               that.errors = response.data.errors;
@@ -115,7 +117,7 @@ if( $('.vue--fiche').length ){
           var cible = $(event.target);
           cible.toggleClass("icon--like icon--liked");
 
-            var response = axios.post("/api/like/create", newLike)
+            var response = axios.post(that.baseUrl+"/api/like/create", newLike)
             .then(function(response){
               var parent = $(cible[0]).parent().parent();
               $(parent[0]).find(".likes__total").text(response.data[0]);
@@ -142,7 +144,7 @@ if( $('.vue--fiche').length ){
 
           var cible = $(event.target);
           cible.toggleClass("icon--dislike icon--disliked");
-            var response = axios.post("/api/dislike/create", newDislike)
+            var response = axios.post(that.baseUrl+"/api/dislike/create", newDislike)
             .then(function(response){
               var parent = $(cible[0]).parent().parent();
               $(parent[0]).find(".likes__total").text(response.data[0]);
@@ -166,7 +168,7 @@ if( $('.vue--fiche').length ){
             comment: input.value,
           }
           var that = this;
-          var response = axios.post("/api/comment/create", newComment)
+          var response = axios.post(that.baseUrl+"/api/comment/create", newComment)
           .then(function(response){
             that.getOneComment(response.data.id, user_id);
             input.value = '';
@@ -181,7 +183,7 @@ if( $('.vue--fiche').length ){
           boutons.toggleClass("hide");
           var that = this;
           if(!this.loadedRatings[element]){
-            var response = axios.get("/api/comments/"+element+"/"+user)
+            var response = axios.get(that.baseUrl+"/api/comments/"+element+"/"+user)
             .then(function(response){
               for(var i = 0; i < response.data.length; i++ ){
                 that.comments.push(response.data[i]);
@@ -202,7 +204,7 @@ if( $('.vue--fiche').length ){
 
         getOneComment(id, user){
           var that = this;
-          var response = axios.get("/api/comment/"+id+"/"+user)
+          var response = axios.get(that.baseUrl+"/api/comment/"+id+"/"+user)
           .then(function(response){
               that.comments.push(response.data);
           });

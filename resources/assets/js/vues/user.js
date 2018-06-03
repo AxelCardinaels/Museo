@@ -5,6 +5,7 @@ if( $('.vue--user').length ){
       data:{
 				userId : $(".user-id").text(),
 				markers : null,
+        baseUrl : $(".baseurl").text(),
       },
 
 			mounted : function(){
@@ -83,7 +84,7 @@ if( $('.vue--user').length ){
 
 				getMarkers : function(){
 					var that = this;
-					var response = axios.get("/api/user/show/"+this.userId)
+					var response = axios.get(that.baseUrl+"/api/user/show/"+this.userId)
           .then(function(response){
 						that.markers = response.data[0].favoris;
 						that.makeMarkers();

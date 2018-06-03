@@ -38,7 +38,7 @@ return [
     'facebook' => [
       'client_id' => env('FACEBOOK_CLIENT_ID'),
       'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
-      'redirect' => ' https://cbd44200.ngrok.io/auth/connexion/facebook/callback',
+      'redirect' => ' http://www.axel-cardinaels.be/Museo/auth/connexion/facebook/callback',
     ],
 
 ];

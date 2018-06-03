@@ -10,6 +10,7 @@ if( $('.vue--search').length ){
         category : '',
         note : '',
         filters : true,
+        baseUrl : $(".baseurl").text(),
       },
 
 			mounted : function(){
@@ -109,7 +110,7 @@ if( $('.vue--search').length ){
             datas.note = this.note;
           }
 
-					var response = axios.get("/api/search/",{params : datas})
+					var response = axios.get(that.baseUrl+"/api/search/",{params : datas})
           .then(function(response){
 						that.markers = response.data;
 						that.makeMarkers();
@@ -120,7 +121,7 @@ if( $('.vue--search').length ){
 
         getCategories : function(){
           var that = this;
-          var response = axios.get("/api/categories/")
+          var response = axios.get(that.baseUrl+"/api/categories/")
           .then(function(response){
 						that.categories = response.data;
 					});

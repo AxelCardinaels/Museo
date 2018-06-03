@@ -9,10 +9,14 @@
           </ul>
       </div>
       @endif
+
+    <!--
     <div class="form__section section--followed">
         <a href="#" title="Se connecter avec Facebook" class="bouton bouton--large  bouton--full bouton--facebook">Me connecter avec Facebook</a>
     </div>
       <p class="form__separator">Ou alors</p>
+
+    -->
 
     <div class="form__section">
       <form  role="form" method="POST" action="{{route("auth.login")}}" class="">
