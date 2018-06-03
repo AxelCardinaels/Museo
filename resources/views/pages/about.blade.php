@@ -33,7 +33,7 @@
     <ul class="list--steps list-inline">
       <h4 class="hide">Les 3 étapes pour essayer Museo</h4>
       <li class="step__item">
-        <img class="step__img" src="{{URL::asset("img/step1.png")}}" alt="Illustration trouvez un musée">
+        <img class="step__img" src="{{URL::asset("img/axel.png")}}" alt="Illustration trouvez un musée">
         <h5 class="step__title title--step title--step-large">Axel Cardinaels</h5>
         <p class="step__subtitle">Créateur, développeur, Génie du mal</p>
       </li>

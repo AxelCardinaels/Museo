@@ -9,6 +9,12 @@ html{
 	color:$color-text;
 }
 
+@-moz-document url-prefix() {
+	html{
+		font-family: 'Nunito Sans', sans-serif;
+	}
+}
+
 html, body{
 }
 

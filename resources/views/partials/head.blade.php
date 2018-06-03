@@ -6,7 +6,7 @@
   <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
   <link href="{{ asset('/css/remodal.css') }}" rel="stylesheet">
   <link href="{{ asset('/css/remodal-default-theme.css') }}" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600|Work+Sans:600" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600|Work+Sans:600|Nunito+Sans:400,600|" rel="stylesheet">
 
 
   <!-- Modernizer -->

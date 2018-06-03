@@ -158,7 +158,7 @@ if( $('.vue--fiche').length ){
 
         createComment : function(element_id, user_id, type, event){
 
-          var input = $(event.path[0]).find(".input--answer")[0];
+          var input = $(event.target).find(".input--answer")[0];
           var newComment = {
             id : element_id,
             user : user_id,

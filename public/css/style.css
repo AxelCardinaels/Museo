@@ -583,6 +583,12 @@ html {
   color: #909090;
 }
 
+@-moz-document url-prefix() {
+  html {
+    font-family: 'Nunito Sans', sans-serif;
+  }
+}
+
 .main--compte {
   background: #F6F7FB;
   padding: calc(80 / 1680 * 100%) 0px calc(120 / 1680 * 100%);
