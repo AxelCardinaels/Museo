@@ -19,6 +19,7 @@
         <li class="menu__item--front menu__item">
           <a class="menu__link--front menu__link" title="Se connecter" href="{{route("auth.connexion")}}">Connexion</a>
         </li>
+
         <li class="menu__item--front menu__item">
           <a class="menu__link--front menu__link" title="Créer un compte" href="{{route("auth.inscription")}}">Inscription</a>
         </li>
@@ -26,7 +27,9 @@
 
       @if(Auth::check())
 
-
+        <li class="menu__item--front menu__item">
+          <a class="menu__link--front menu__link" title="Ajouter un nouveau lieu" href="{{route("place.add")}}">Ajouter un lieu</a>
+        </li>
 
       <li class="menu__item--user">
         <a href="#" class="menu__img" title="Afficher le menu utilisateur">
@@ -35,9 +38,6 @@
 
         <ul class="user__menu hide">
 
-          <li class="user__item--front user__item">
-            <a class="user__link--front user__link" title="Ajouter un nouveau lieu" href="{{route("place.add")}}">Ajouter un lieu</a>
-          </li>
           <li class="user__item--front user__item">
             <a class="user__link--front user__link" title="Afficher mon page utilisateur" href="{{route("user.show", ["id" => Auth::User()->id])}}">Mon profil</a>
           </li>

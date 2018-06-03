@@ -114,6 +114,8 @@ if( $('.vue--fiche').length ){
             newLike.user = user_id;
           };
 
+          var that = this;
+
           var cible = $(event.target);
           cible.toggleClass("icon--like icon--liked");
 
@@ -135,6 +137,8 @@ if( $('.vue--fiche').length ){
             id : element_id,
             type_name : type,
           };
+
+          var that = this;
 
           if(user_id == null){
             newDislike.user = null;

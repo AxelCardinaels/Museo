@@ -35,7 +35,7 @@ class CheckAchievements
             if($success->points == $achievement->points){
                 DB::table('achievement_user')->where(["user_id" => $event->user->id, "achievement_id" => $achievement->id])->update(["unlocked" => 1]);
 
-                $response = ["text" => 'Félicitations, vous avez débloqué le titre " '.$achievement->title.' " ! <a href="/compte" title="Afficher mes titres" class="modal__link">Afficher mes titres</a> ', 'title' => $achievement->title];
+                $response = ["text" => 'Félicitations, vous avez débloqué le titre " '.$achievement->title.' " ! <a href="'.route("compte.edit").'" title="Afficher mes titres" class="modal__link">Afficher mes titres</a> ', 'title' => $achievement->title];
             }
           }
         }

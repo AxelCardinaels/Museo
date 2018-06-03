@@ -12,13 +12,13 @@
     </div>
 
     <div class="section__texts wrapper--texts">
-      <p>De nos jours, les musées et les lieux d'expositions sont toujours perçus comme des endroits froids et distants, où l'on n'ose pas vraiment entrer. De plus, obtenir des renseignements, des évaluations ou des avis réels n'est pas toujours facile. Partant de ce constant, Museo est né. Développé dans le cadre d'un mémoire en Communication, orienté Médiation des Institutions Culturelles, cette plateforme a pour but d'offrir à tous un moyen plus simple de découvrir de nouveaux lieux d'expositions et de pouvoir en connaître la qualité grâce aux notes entrées par la communauté.</p>
+      <p>Développé dans le cadre d'un mémoire en Communication, orienté Médiation des Institutions Culturelles, Museo a pour but d'offrir à tous un moyen plus simple de découvrir de nouveaux lieux d'expositions et de pouvoir en connaître la qualité grâce aux notes entrées par la communauté.</p>
 
-      <p>La plateforme est à ce jour toujours en train d'être améliorée de façon régulière, afin de répondre de la façon la plus éfficiente aux attentes de chacun. N'hésitez d'ailleurs pas à entrer en contact avec <a href="http://www.axel-cardinaels.be" target="_blank" title="Site d'Axel Cardinaels">Axel Cardinaels</a> si quelque chose vous semble manquer ou pour toutes autres remarques constructives éventuelles.</p>
+      <p>La plateforme est à ce jour toujours en train d'être améliorée de façon régulière, afin de répondre de la façon la plus éfficace aux attentes de chacun. N'hésitez d'ailleurs pas à entrer en contact avec <a href="http://www.axel-cardinaels.be" target="_blank" title="Site d'Axel Cardinaels">Axel Cardinaels</a> si quelque chose vous semble manquer ou pour toutes autres remarques constructives.</p>
 
-      <p>Le but final est donc de permettre de chacun de trouver ce qu'il cherche concernant les institutions qui l'intéresse, et ainsi pouvoir lui offrir la possibilité ou l'envie de sauter le pas pour finalement entreprendre de nouvelles visites et aventures culturelles. Evidemment, le tout fonctionne dans l'autre sens, avec une visibilité accrue pour les institutions également.</p>
+      <p>Le but final est de permettre de chacun de trouver ce qu'il cherche concernant les institutions qui l'intéresse, et ainsi pouvoir lui offrir la possibilité ou l'envie de sauter le pas pour finalement entreprendre de nouvelles visites et aventures culturelles. Evidemment, le tout fonctionne dans l'autre sens, avec une visibilité accrue pour les institutions également.</p>
 
-      <p>Alors qu'attendez-vous pour créer un compte et tenter l'aventure Museo ? C'est totalement gratuit et l'inscription prend moins de 2 minutes !</p>
+      <p>Alors qu'attendez-vous pour créer un compte et tenter l'aventure Museo ? C'est totalement gratuit et <a href="{{route("auth.inscription")}}" target="_blank" title="Rejoindre Museo">l'inscription</a> prend moins de 2 minutes ! </p>
 
 
     </div>

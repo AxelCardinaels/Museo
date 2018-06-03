@@ -32,3 +32,9 @@ $(".success--label").click(function(){
   $(".success--label").removeClass("success--selected");
   $(this).addClass("success--selected");
 });
+
+
+if( $('[type="date"]').prop('type') != 'date' ) {
+  flatpickr.localize(flatpickr.l10ns.fr);
+  flatpickr('[type="date"]');
+};

@@ -280,7 +280,7 @@
 
 
     <h3 class="section__subtitle subtitle--section">Evaluation générale du musée</h3>
-    <p>Les notes affichées ci-dessous sont basées sur les retours que les membres de la communauté ont laissé après avoir visité l’institution.</p>
+    <p>Les notes affichées ci-dessous sont basées sur les retours que les membres de la communauté ont laissés après avoir visité l’institution.</p>
 
     <ul class="stats__criteria clearfix">
       @if($detailledNotes)

@@ -40,7 +40,7 @@
           </div>
 
           <div class="form__input clearfix">
-            <label class="label--sided" for="phone">Téléphone</label>
+            <label class="label--sided label--secret" for="phone">Téléphone <img src="{{URL::asset('img/icon--secret.svg')}}" alt="Icone secret" class="form__secret"/></label>
             <input type="text" class="input--text input--classic input--sided" name="phone" id="phone" value="{{ ($user->phone) ? $user->phone : "" }}" placeholder="Votre numéro de téléphone"/>
           </div>
         </fieldset>

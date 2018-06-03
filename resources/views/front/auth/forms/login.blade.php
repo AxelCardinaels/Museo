@@ -1,10 +1,11 @@
 <div class="form__front">
   <div class="form__content">
     @if (count($errors) > 0)
-      <div class="">
-          <ul>
+      <div class="errors__container">
+        <h3 class="title--error">Il y a eu un soucis lors de la connexion !</h3>
+          <ul class="list--errors">
               @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
+              <li class="error__item">{{ $error }}</li>
               @endforeach
           </ul>
       </div>
