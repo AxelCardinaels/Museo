@@ -18,18 +18,19 @@ if( $('.vue--user').length ){
           var titles = [];
           var informations = [];
           var markers = [];
+          var that = this;
 						$(this.markers).each(function(){
 							var myLatLng = {lat: Number(this.lat), lng: Number(this.lng)};
               var icon = {
-                url: "/img/icon--marker.svg", // url
+                url: that.baseUrl+"/img/icon--marker.svg", // url
                 scaledSize: new google.maps.Size(45, 45), // Taille
               };
               var contentTitle = '<div class="marker__style">'+this.name+'</div>';
-              var contentInfos = '<div class="marker__content"><a class="marker__link" target="_blank" href="/lieux/'+this.id+'"'
+              var contentInfos = '<div class="marker__content"><a class="marker__link" target="_blank" href="'+that.baseUrl+'/lieux/'+this.id+'"'
               +'title="Afficher le lieu '+this.name+'"></a><figure style="background-image:url('
-              +"'"+'/'+this.main_picture+'"'+"'"+')" class="marker__banner" alt="Image du lieu '
+              +"'"+that.baseUrl+'/'+this.main_picture+'"'+"'"+')" class="marker__banner" alt="Image du lieu '
               +this.name+'"></figure><h4 class="title--marker">'+this.name+'</h4><p class="marker__note">'+
-              this.note+' '+'<img class="marker__star" src="/img/icon--star.svg"/> / 5</p></div>';
+              this.note+' '+'<img class="marker__star" src="'+that.baseUrl+'/img/icon--star.svg"/> / 5</p></div>';
               var infoTitle = new google.maps.InfoWindow({content: contentTitle, zIndex : 5});
               var infos = new google.maps.InfoWindow({content: contentInfos, zIndex : 10});
               informations.push(infos);
@@ -39,7 +40,7 @@ if( $('.vue--user').length ){
 			          map: map,
                 icon: icon,
 			          title: this.name,
-                url: "/lieux/"+this.id,
+                url: that.baseUrl+"/lieux/"+this.id,
                 infoWindowTitle : infoTitle,
                 infoWindowInfos : infos,
 			        });

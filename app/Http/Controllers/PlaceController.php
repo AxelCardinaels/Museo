@@ -78,7 +78,7 @@ class PlaceController extends Controller
         'free.required' => 'Les informations de gratuité sont nécessaires.',
         'number.required' => 'L’adresse n’est pas complète ! Elle doit comporter un numéro.',
         'country.required' => 'L’adresse n’est pas complète ! Elle doit comporter un pays.',
-        'state.required' => 'L’adresse n’est pas complète ! Elle doit comporter une rue, un numéro et la ville',
+        'state.required' => 'L’adresse n’est pas complète ! Elle doit comporter une ville',
         'adress.required' => 'L’adresse n’est pas complète ! Elle doit comporter une rue, un numéro, la ville et le pays.',
         'main_picture.max' => 'Désolé, la photo ne peut pas dépasser les 2,5 Mo !',
         'adress.unique' => 'Cette adresse est déja utilisée. Avez vous vérifiez si ce musée n’existait pas sur le site ?',

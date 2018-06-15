@@ -65,8 +65,8 @@ class RegisterController extends Controller
           'email.required' => 'Vous devez renseigner une adresse email.',
           'email.email' => 'Votre adresse email n\'est pas valide.',
           'email.unique' => 'Cette adresse email est déjà utilisée.',
-          'password_name.required' => 'Vous devez renseigner un mot de passe.',
-          'password_name.min' => 'Votre mot de passe doit faire au moins 6 caractères.',
+          'password.required' => 'Vous devez renseigner un mot de passe.',
+          'password.min' => 'Votre mot de passe doit faire au moins 6 caractères.',
       ]);
     }
 
