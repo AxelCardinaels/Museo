@@ -32,6 +32,9 @@ class User extends Authenticatable
       return $this->hasMany('App\Place', 'creator_id', 'id');
     }
 
+    public function claims(){
+      return $this->hasMany('App\Claim');
+    }
 
 
     public function favoris(){

@@ -61,5 +61,11 @@ class DaysTableSeeder extends Seeder
         'name'=> "Tous les jours",
         'created_at' => Carbon::now()->format('Y-m-d H:i:s')
       ));
+
+      DB::table('days')->insert(array(
+        'id'=> 9,
+        'name'=> "Inconnu",
+        'created_at' => Carbon::now()->format('Y-m-d H:i:s')
+      ));
     }
 }

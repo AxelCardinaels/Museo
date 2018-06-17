@@ -110,6 +110,8 @@
           <span class="link--icon">
             @if($place->freeDay_id == 8)
               Gratuit tous les jours
+            @elseif($place->freeDay_id == 9)
+              Jour de gratuité inconnu
             @else
               Gratuit le premier {{$place->freeDay->name}} du mois
             @endif
@@ -326,6 +328,13 @@
         @endif
       </ul>
     </div>
+
+    @if(Auth::check())
+      <a href="#" data-remodal-target="modal-signal" title="Signaler cette fiche">Signaler cette fiche</a>
+    @else
+      <a href="#" data-remodal-target="modal-join" title="Signaler cette fiche">Signaler cette fiche</a>
+    @endif
+
   </div>
 </section>
 
@@ -416,6 +425,34 @@
         <p class="modal__text success__text">Votre avis et vos notes ont été ajoutés sur la fiche, merci !</p>
       </div>
       <a href="{{route("place.back", ["id" => $place->id])}}" class="modal__close" title="Fermer la fenêtre">Retour à la fiche du lieux</a>
+    </div>
+  </div>
+
+  <div data-remodal-id="modal-signal" class="remodal">
+    <div class="modal__inside modal--unpadded wrapper--modal wrapper--modal--large wrapper--centered">
+      <button data-remodal-action="close" class="remodal-close"></button>
+      <div class="modal__box">
+        <h3 class="title--modal">Êtes-vous sur de vouloir signaler cette fiche ?</h3>
+        <p class="modal__text success__text modal__text--spaced ">Une fois signalée, cette dernière sera analysée par notre équipe.</p>
+      <form class="criteria__form" method="POST"  v-on:submit.prevent="createClaim({{$place->id}},{{Auth::id()}})">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <input type="submit" name="submit-claim" id="submit-claim" class="hide" tabIndex="-1"/>
+        <textarea class="input--text input--classic input--full input--textarea" v-model="newClaim.comment" name="comment" id="comment" value="{{old('comment')}}" placeholder="Désirez vous ajoutez un commentaire pour décrire votre signalement ?"></textarea>
+      </form>
+      </div>
+      <button class="button__modal--fake" title="Signaler cette fiche"><label for="submit-claim" class="button__label modal__close" tabindex="0">Signaler</label></button>
+    </div>
+  </div>
+
+  <div data-remodal-id="modal-signal-final" class="remodal">
+    <div class="modal__inside modal--unpadded wrapper--modal wrapper--modal--large wrapper--centered">
+      <button data-remodal-action="close" class="remodal-close"></button>
+      <div class="modal__box">
+        <h3 class="title--modal">Le musée a été signalé !</h3>
+        <p class="subtitle--success">Concernant le lieu "{{$place->name}}"</p>
+        <p class="modal__text modal__text--spaced success__text">Nous avons bien pris connaissance de votre signalement. Merci !</p>
+      </div>
+      <a data-remodal-action="close" class="modal__close" title="Fermer la fenêtre">Retour à la fiche du lieux</a>
     </div>
   </div>
 @endif

@@ -11776,6 +11776,12 @@ if( $('.vue--fiche').length ){
           user_id : '',
         },
 
+        newClaim : {
+          comment :'',
+          place_id : '',
+          user_id : '',
+        },
+
         baseUrl : $(".baseurl").text(),
         loadedRatings : [],
         comments : [],
@@ -11814,6 +11820,24 @@ if( $('.vue--fiche').length ){
           });
         },
 
+        createClaim : function(place_id, user_id){
+          var modal = $('[data-remodal-id=modal-signal]').remodal();
+          var nextModal = $('[data-remodal-id=modal-signal-final]').remodal();
+          this.newClaim.place_id = place_id;
+          this.newClaim.user_id = user_id;
+
+          var that = this;
+					var response = axios.post(that.baseUrl+"/api/claim/create", this.newClaim)
+          .then(function(response){
+            if(response.data.errors){
+              that.errors = response.data.errors;
+            }else{
+              that.errors = null;
+              modal.close();
+              nextModal.open();
+            }
+					});
+        },
 
         createRating : function(place_id, user_id){
           var modal = $('[data-remodal-id=modal-evaluation]').remodal();

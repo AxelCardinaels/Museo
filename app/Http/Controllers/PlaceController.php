@@ -68,10 +68,10 @@ class PlaceController extends Controller
         'state' => 'required',
         'country' => 'required',
         'number' => 'required',
-        'main_picture' => 'file|max:2500',
+        'main_picture' => 'file|max:2500|required',
         'category' => 'required',
         'free' => 'required',
-        'website' => 'url',
+        'website' => 'nullable|url',
     ], [
         'name.required' => 'Vous devez renseigner le nom du musée.',
         'category.required' => 'Le musée doit avoir une catégorie.',
@@ -81,6 +81,7 @@ class PlaceController extends Controller
         'state.required' => 'L’adresse n’est pas complète ! Elle doit comporter une ville',
         'adress.required' => 'L’adresse n’est pas complète ! Elle doit comporter une rue, un numéro, la ville et le pays.',
         'main_picture.max' => 'Désolé, la photo ne peut pas dépasser les 2,5 Mo !',
+        'main_picture.required' => 'Le musée doit avoir une photo.',
         'adress.unique' => 'Cette adresse est déja utilisée. Avez vous vérifiez si ce musée n’existait pas sur le site ?',
         'website.url' => 'Le format de l’adresse du site web n’est pas correct.',
 

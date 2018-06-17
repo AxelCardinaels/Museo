@@ -23,3 +23,4 @@ Route::post('/rating/create', ['as' => 'api.rating.create', 'uses' => 'Api\Ratin
 Route::post('/rating/criteria/create', ['as' => 'api.rating.criteria.create', 'uses' => 'Api\RatingController@addCriteria']);
 Route::post('/like/create', ['as' => 'api.like.create', 'uses' => 'Api\LikeController@like']);
 Route::post('/dislike/create', ['as' => 'api.dislike.create', 'uses' => 'Api\DislikeController@dislike']);
+Route::post('/claim/create', ['as' => 'api.claim.create', 'uses' => 'Api\ClaimController@create']);

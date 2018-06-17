@@ -2199,7 +2199,7 @@ input:disabled {
 }
 
 .label--secret:after {
-  content: "Ceci restera priv\E9";
+  content: "Ceci restera cach\E9";
   color: white;
   font-size: 0.95em;
   font-family: 'Nunito', sans-serif;
@@ -2475,6 +2475,10 @@ input:disabled {
 
 .modal__box {
   padding: 0px 3.125em;
+}
+
+.modal__text--spaced {
+  margin: 0.5em 0px 2em;
 }
 
 .modal__close {

@@ -10,6 +10,8 @@
       </div>
       @endif
 
+
+
       <form  role="form" method="POST" action="{{route("place.create")}}" class="clearfix vue--create-place" enctype="multipart/form-data">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -21,16 +23,18 @@
           <input type="file" class="input--upload-img upload-img--museum reactive-upload" name="main_picture" id="main_picture" accept="image/*"/>
         </div>
 
+        @if(old('main_picture')){{dd(old('main_picture'))}}@endif
+
         <fieldset class="column--left column--basics">
           <h3 class="section__subtitle subtitle--spaced-small">Parlez-nous de l’établissement</h3>
           <input type="text" class="input--text input--classic input--full" name="name" id="name" value="{{old('name')}}" placeholder="Quel est le nom du musée ?" required/>
-          <textarea class="input--text input--classic input--full input--textarea" name="description" id="description" placeholder="Décrivez-nous donc le musée !" value="{{old('description')}}"></textarea>
+          <textarea class="input--text input--classic input--full input--textarea" name="description" id="description" placeholder="Décrivez-nous donc le musée !">{{old('description')}}</textarea>
         </fieldset>
 
         <fieldset class="column--right column--more form__part">
           <h3 class="section__subtitle subtitle--spaced-small">Informations supplémentaires</h3>
           <input type="url" class="input--text input--classic input--full" name="website" id="website" value="{{old('website')}}" placeholder="Quel est le site web du musée ?"/>
-          <input type="text" class="input--text input--classic input--full" v-model.lazy="adress" v-debounce="500" @change="searchPlace()" value="" placeholder="Quelle est l'adresse complète (rue, ville, pays) du musée ?" required/>
+          <input type="text" class="input--text input--classic input--full" v-model.lazy="adress" v-debounce="500" @change="searchPlace()" value="" placeholder="Aidez-nous à trouver l'adresse (rue, ville, pays) du musée" required/>
           <div class="adress__selector" v-if="showAdresses == 1">
             <label class="label--classic label--full">Sélectionnez l'adresse</label>
             <select v-if="adresses.status == 'ZERO_RESULTS'"  class="input--classic input--full">
@@ -59,6 +63,8 @@
                 <option value="{{$day->id}}" {{ (old('free') == $day->id) ? "selected" : "" }}>
                   @if($day->id == 8)
                     Ce musée est toujours gratuit
+                  @elseif($day->id == 9)
+                    Je ne sais pas
                   @else
                     Le premier {{$day->name}} du mois
                   @endif

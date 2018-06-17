@@ -29,6 +29,10 @@ class Place extends Model
       return $this->hasMany('App\Rating');
     }
 
+    public function claims(){
+      return $this->hasMany('App\Claim');
+    }
+
     public function tags(){
       return $this->hasMany('App\Tag');
     }
