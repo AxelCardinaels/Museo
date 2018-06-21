@@ -368,7 +368,7 @@
           </form>
         </div>
       </div>
-      <button class="button__modal--fake" title="Fermer la fenêtre"><label for="submit-form" class="button__label modal__close" tabindex="0">Passer à l'évaluation</label></button>
+      <label for="submit-form" class="button__label modal__close">Passer à l'évaluation</label>
     </div>
   </div>
 
@@ -411,7 +411,7 @@
             </div>
           </div>
         </div>
-        <button class="button__modal--fake" title="Passer au critère suivant"><label for="submit-form-{{$loop->index}}" class="button__label modal__close" tabindex="0">Critère suivant</label></button>
+        <label for="submit-form-{{$loop->index}}" class="button__label modal__close">Critère suivant</label>
       </div>
     </div>
   @endforeach
@@ -440,7 +440,7 @@
         <textarea class="input--text input--classic input--full input--textarea" v-model="newClaim.comment" name="comment" id="comment" value="{{old('comment')}}" placeholder="Désirez vous ajoutez un commentaire pour décrire votre signalement ?"></textarea>
       </form>
       </div>
-      <button class="button__modal--fake" title="Signaler cette fiche"><label for="submit-claim" class="button__label modal__close" tabindex="0">Signaler</label></button>
+      <!--<button class="button__modal--fake" title="Signaler cette fiche">--><label for="submit-claim" class="button__label modal__close" >Signaler</label><!--</button>-->
     </div>
   </div>
 

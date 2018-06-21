@@ -169,8 +169,7 @@
       </form>
 
     </div>
-
-    <button class="button__modal--fake" title="Filtrer les résultats"><label for="submit-search" class="button__label modal__close" tabindex="0">Filtrer les résultats</label></button>
+      <label for="submit-search" class="button__label modal__close" >Filtrer les résultats</label>
   </div>
 </div>
 
